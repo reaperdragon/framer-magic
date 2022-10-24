@@ -11,10 +11,20 @@ export default function Home() {
         <BgContainer
           as={motion.div}
           image={`${"/images/hero-bg.jpg"}`}
-          mobImage={`${"/images/hero-bg-mobile.jpg"}`}
+          mobimage={`${"/images/hero-bg-mobile.jpg"}`}
         >
           <div className="content">
-            <ButtonIOS>Updated for iOS 16 </ButtonIOS>
+            <ButtonIOS>
+              Updated for iOS 16{" "}
+              <Image
+                src="/svgs/arrow-right-duotone.svg"
+                className="hero-device-icon"
+                alt="Play"
+                layout="intrinsic"
+                width="15"
+                height="15"
+              />{" "}
+            </ButtonIOS>
             <h1 className="main">
               Mix 3D <br /> and 2D design <br /> with Framer
             </h1>
@@ -118,7 +128,7 @@ const BgContainer = styled.section`
   background-size: cover;
 
   @media (max-width: 810px) {
-    background: url(${(props) => props.mobImage});
+    background: url(${(props) => props.mobimage});
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -258,6 +268,9 @@ const ButtonIOS = styled.button`
   gap: 10px;
   color: white;
   cursor: pointer;
+  display:flex ;
+  align-items:center ;
+  justify-content:center ;
 
   @media (max-width: 810px) {
     font-size: 12px;
