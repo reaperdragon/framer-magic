@@ -8,7 +8,11 @@ export default function Home() {
   return (
     <>
       <Wrapper as={motion.div}>
-        <BgContainer as={motion.div} image={`${"/images/hero-bg.jpg"}`}>
+        <BgContainer
+          as={motion.div}
+          image={`${"/images/hero-bg.jpg"}`}
+          mobImage={`${"/images/hero-bg-mobile.jpg"}`}
+        >
           <div className="content">
             <ButtonIOS>Updated for iOS 16 </ButtonIOS>
             <h1 className="main">
@@ -19,7 +23,7 @@ export default function Home() {
               asset with mouse over interaction. It falls back to an image on
               smaller devices.
             </p>
-            <div>
+            <div className="hero-btns">
               <ButtonHero primary>GET THE APP</ButtonHero>
               <ButtonHero>WATCH VIDEO</ButtonHero>
             </div>
@@ -92,6 +96,13 @@ const BgContainer = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media (max-width: 810px) {
+    background: url(${(props) => props.mobImage});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   .content {
     font-family: "Manrope", sans-serif;
     display: flex;
@@ -103,6 +114,25 @@ const BgContainer = styled.section`
     justify-content: center;
     gap: 30px;
     z-index: 1;
+
+    @media (max-width: 809px) {
+      display: flex;
+      flex-flow: column nowrap;
+      place-content: center flex-start;
+      align-items: center;
+      gap: 20px;
+      max-width: 800px;
+      width: 100%;
+      height: min-content;
+      inset: 100px auto auto 0px;
+      flex: 0 0 auto;
+      transform: none;
+      aspect-ratio: unset;
+      margin-left: 0;
+      padding-top: 120px;
+      text-align: center;
+      text-shadow: none;
+    }
   }
 
   .main {
@@ -110,6 +140,10 @@ const BgContainer = styled.section`
     color: white;
     font-weight: bold;
     text-shadow: 2px 2px 10px #000;
+
+    @media (max-width: 809px) {
+      text-shadow: none;
+    }
   }
 
   .contentp {
@@ -117,6 +151,21 @@ const BgContainer = styled.section`
     color: rgba(255, 255, 255, 0.8);
     font-weight: light;
     text-shadow: 2px 2px 10px #000;
+
+    @media (max-width: 809px) {
+      text-shadow: none;
+    }
+  }
+
+  .hero-btns {
+    @media (max-width: 809px) {
+      display:flex ;
+      align-items:center ;
+      justify-content:center ;
+      flex-direction:column ;
+      
+      gap:20px ;
+    }
   }
 `;
 
@@ -131,6 +180,8 @@ const ButtonHero = styled.button`
   border-radius: 24px 24px 0;
   font-family: "Manrope", sans-serif;
   font-weight: semibold;
+  font-size:14px ;
+  font-weight:bold ;
 `;
 
 const ButtonIOS = styled.button`
