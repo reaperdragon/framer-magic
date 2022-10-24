@@ -294,6 +294,18 @@ const Container = styled.div`
     justify-content: space-between;
     max-width: 800px;
     width: 100%;
+
+    @media (max-width: 810px) {
+      flex-wrap:wrap ;
+      justify-content:center;
+      gap:10px ;
+
+      img {
+        margin:10px 0 ;
+      }
+    }
+
+
   }
 
   .container-sep {
