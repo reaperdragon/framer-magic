@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { data1 } from "../constants/data1";
+import { Header } from "../components";
 
 export default function Home() {
   return (
@@ -190,7 +191,7 @@ const BgContainer = styled.section`
 
   .hero-btns {
     display: flex;
-    gap:20px ;
+    gap: 20px;
 
     @media (max-width: 809px) {
       display: flex;
@@ -221,15 +222,13 @@ const ButtonHero = styled.button`
   outline: none;
   display: flex;
 
-
   align-items: center;
   justify-content: center;
   gap: 16px;
   width: 220px;
   transition: all 0.3s ease-in-out;
 
-  border-style: ${(props) =>
-    props.primary ? null : "solid"};
+  border-style: ${(props) => (props.primary ? null : "solid")};
   border-width: ${(props) => (props.primary ? null : `1px`)};
   border-color: ${(props) =>
     props.primary ? null : "rgba(255, 255, 255, 0.2)"};
@@ -268,9 +267,9 @@ const ButtonIOS = styled.button`
   gap: 10px;
   color: white;
   cursor: pointer;
-  display:flex ;
-  align-items:center ;
-  justify-content:center ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 810px) {
     font-size: 12px;
@@ -309,16 +308,14 @@ const Container = styled.div`
     width: 100%;
 
     @media (max-width: 810px) {
-      flex-wrap:wrap ;
-      justify-content:center;
-      gap:10px ;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
 
       img {
-        margin:10px 0 ;
+        margin: 10px 0;
       }
     }
-
-
   }
 
   .container-sep {
