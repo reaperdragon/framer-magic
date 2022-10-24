@@ -24,8 +24,29 @@ export default function Home() {
               smaller devices.
             </p>
             <div className="hero-btns">
-              <ButtonHero primary>GET THE APP</ButtonHero>
-              <ButtonHero>WATCH VIDEO</ButtonHero>
+              <ButtonHero primary>
+                {" "}
+                <Image
+                  src="/svgs/device-mobile-duotone.svg"
+                  className="hero-device-icon"
+                  alt="Play"
+                  layout="intrinsic"
+                  width="30"
+                  height="30"
+                />{" "}
+                GET THE APP
+              </ButtonHero>
+              <ButtonHero>
+                {" "}
+                <Image
+                  src="/svgs/play-duotone.svg"
+                  alt="Play"
+                  layout="intrinsic"
+                  width="30"
+                  height="30"
+                />{" "}
+                WATCH VIDEO
+              </ButtonHero>
             </div>
           </div>
         </BgContainer>
@@ -158,13 +179,16 @@ const BgContainer = styled.section`
   }
 
   .hero-btns {
+    display: flex;
+    gap:20px ;
+
     @media (max-width: 809px) {
-      display:flex ;
-      align-items:center ;
-      justify-content:center ;
-      flex-direction:column ;
-      
-      gap:20px ;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      gap: 20px;
     }
   }
 `;
@@ -174,28 +198,70 @@ const ButtonHero = styled.button`
   background: ${(props) =>
     props.primary
       ? "linear-gradient(135deg, rgb(177, 117, 255) 0%, rgb(28, 20, 255) 100%)"
-      : "rgba(0, 0, 0, 0.5)"};
+      : "rgba(0, 0, 0, 0.4)"};
   padding: 10px;
   color: white;
   border-radius: 24px 24px 0;
   font-family: "Manrope", sans-serif;
   font-weight: semibold;
-  font-size:14px ;
-  font-weight:bold ;
+  font-size: 14px;
+  font-weight: bold;
+  backdrop-filter: blur(30px);
+  border: none;
+  outline: none;
+  display: flex;
+
+
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 220px;
+  transition: all 0.3s ease-in-out;
+
+  border-style: ${(props) =>
+    props.primary ? null : "solid"};
+  border-width: ${(props) => (props.primary ? null : `1px`)};
+  border-color: ${(props) =>
+    props.primary ? null : "rgba(255, 255, 255, 0.2)"};
+
+  .hero-device-icon {
+    transform: rotate(0deg);
+    transition: all 0.6s ease-in-out;
+  }
+
+  :hover {
+    background: ${(props) =>
+      props.primary
+        ? "linear-gradient(135deg, rgb(177, 117, 255) 0%, rgb(28, 20, 255) 100%)"
+        : "rgba(0, 0, 0, 0.1)"};
+    gap: 20px;
+
+    .hero-device-icon {
+      -webkit-transform: rotateZ(90deg);
+      -moz-transform: rotateZ(90deg);
+      -ms-transform: rotateZ(90deg);
+      -o-transform: rotateZ(90deg);
+      transform: rotateZ(90deg);
+    }
+  }
 `;
 
 const ButtonIOS = styled.button`
   width: fit-content;
   font-family: "Manrope", sans-serif;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   outline: none;
   border: none;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   padding: 4px 16px;
   gap: 10px;
   color: white;
   cursor: pointer;
+
+  @media (max-width: 810px) {
+    font-size: 12px;
+  }
 `;
 
 const Container = styled.div`
