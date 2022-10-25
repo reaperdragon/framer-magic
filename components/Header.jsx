@@ -256,6 +256,7 @@ const Container = styled.nav`
     position: absolute;
     top: 60px;
     left: 0;
+    backdrop-filter: blur(15px);
 
     padding: 20px 0;
     display: none;

@@ -100,6 +100,74 @@ export default function Home() {
           ))}
         </div>
       </Container>
+
+      <ContainerComponents image={`${"/images/wallpaper1.jpg"}`}>
+        <div className="mockups-1">
+          <div className="mockups-1-image-1">
+            <div className="mockup-content-1">
+              <div className="mockup-content-first">
+                <h3>LAC SUPERIEUR</h3>
+                <p>30 mins ago</p>
+                <span>3,054 STEPS</span>
+              </div>
+
+              <div className="mockup-content-second">
+                <button>VISIT</button>
+                <span>3% HIGHER</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mockups-1-image-2">
+            <div className="mockup-content-2">
+              <div className="mockup-content-first">
+                <h3>COIT TOWER</h3>
+                <p>21 mins ago</p>
+                <span>3,054 STEPS</span>
+              </div>
+
+              <div className="mockup-content-second">
+                <button>VISIT</button>
+                <span>3% HIGHER</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mockups-2"></div>
+        <div className="container-component-main">
+          <Image
+            src="/svgs/rocket-duotone.svg"
+            className="hero-device-icon"
+            alt="Play"
+            layout="intrinsic"
+            width="30"
+            height="30"
+          />{" "}
+          <h1 className="container-component-title">
+            Many types of components to customize
+          </h1>
+          <p className="container-component-content">
+            Build a website without writing a single line of code using Framer
+            components and customizing the entire content
+          </p>
+          <button className="container-component-button">
+            <Image
+              src="/svgs/cards-duotone.svg"
+              className="hero-device-icon"
+              alt="Play"
+              layout="intrinsic"
+              width="30"
+              height="30"
+            />{" "}
+            Learn More
+          </button>
+          <div className="container-component-divider"></div>
+          <p className="container-component-text">
+            Grow your business, reach new audiences, and hit your goals with
+            integrations.
+          </p>
+        </div>
+      </ContainerComponents>
     </>
   );
 }
@@ -375,5 +443,151 @@ const Container = styled.div`
     color: rgba(255, 255, 255, 0.7);
     font-weight: normal;
     font-size: 14px;
+  }
+`;
+
+const ContainerComponents = styled.section`
+  background: url(${(props) => props.image});
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: fit-content;
+  font-family: "Manrope", sans-serif;
+  padding: 100px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 640px) {
+    padding: 80px 20px;
+  }
+
+  .mockups-1 {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mockups-1-image-1 {
+    background: url("https://images.unsplash.com/photo-1637416067365-2b5e7e8fe8fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px 0 40px 40px;
+    position: relative;
+  }
+
+  .mockups-1-image-2 {
+    background: url("https://images.unsplash.com/photo-1641391503184-a2131018701b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80");
+    width: 300px;
+    height: 400px;
+    border-radius: 40px 0 40px 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .mockup-content-1 {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(30px);
+    border-radius: 40px 40px 40px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .mockup-content-2 {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(30px);
+    border-radius: 40px 40px 40px 40px;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .mockup-content-first {
+  }
+
+  .mockup-content-second {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-component-main {
+    display: flex;
+    flex-flow: column nowrap;
+    place-content: center flex-start;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .container-component-title {
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+
+  .container-component-content {
+    color: white;
+    font-size: 18px;
+  }
+
+  .container-component-button {
+    cursor: pointer;
+    background: ${(props) =>
+      props.primary
+        ? "linear-gradient(135deg, rgb(177, 117, 255) 0%, rgb(28, 20, 255) 100%)"
+        : "rgba(0, 0, 0, 0.7)"};
+    padding: 10px;
+    color: white;
+    border-radius: 24px 24px 0;
+    font-family: "Manrope", sans-serif;
+    font-weight: semibold;
+    font-size: 14px;
+    font-weight: bold;
+    backdrop-filter: blur(30px);
+    border: none;
+    outline: none;
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 220px;
+    transition: all 0.3s ease-in-out;
+
+    border-style: ${(props) => (props.primary ? null : "solid")};
+    border-width: ${(props) => (props.primary ? null : `1px`)};
+    border-color: ${(props) =>
+      props.primary ? null : "rgba(255, 255, 255, 0.2)"};
+  }
+
+  .container-component-divider {
+    width: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    height: 1px;
+  }
+
+  .container-component-text {
+    color: rgba(255, 255, 255, 0.8);
   }
 `;
