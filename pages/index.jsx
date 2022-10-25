@@ -505,6 +505,7 @@ const ContainerComponents = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    height: 120px;
   }
 
   .mockup-content-2 {
@@ -519,14 +520,50 @@ const ContainerComponents = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    height: 120px;
   }
 
   .mockup-content-first {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h3 {
+      color: white;
+      font-weight: bolder;
+    }
+    p {
+      color: rgba(0, 0, 0, 0.3);
+    }
+
+    span {
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.6);
+    }
   }
 
   .mockup-content-second {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    gap: 10px;
+
+    button {
+      font-size: 16px;
+      color: white;
+      gap: 16px;
+      padding: 8px 16px;
+      border-radius: 24px 24px 0px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(16px);
+    }
+
+    span {
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.6);
+    }
   }
 
   .container-component-main {
