@@ -213,8 +213,8 @@ export default function Home() {
             className="hero-device-icon"
             alt="Play"
             layout="intrinsic"
-            width="30"
-            height="30"
+            width="60"
+            height="60"
           />{" "}
           <h4 className="container-component-title">
             Many types of components to customize
@@ -707,7 +707,7 @@ const ContainerComponents = styled.section`
     border-radius: 40px 40px 40px 40px;
     border: 0.5px solid rgba(255, 255, 255, 0.3);
     display: flex;
- 
+
     justify-content: space-evenly;
     height: 120px;
     box-shadow: rgb(0 0 0 / 0%) 0px 1.67332px 1.67332px 0px,
