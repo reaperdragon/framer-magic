@@ -100,7 +100,7 @@ const Container = styled.nav`
   right: 0;
   left: 0;
   height: 60px;
-  z-index: 50;
+  z-index: 30;
   backdrop-filter: blur(40px);
   display: flex;
   align-items: center;
@@ -251,12 +251,12 @@ const Container = styled.nav`
     text-transform: uppercase;
     transition: all 0.3s ease-in-out;
     height: fit-content;
-    z-index: 99;
+    z-index: 40;
     width: 100%;
     position: absolute;
     top: 60px;
     left: 0;
-    right: 0;
+
     padding: 20px 0;
     display: none;
 
@@ -272,13 +272,14 @@ const Container = styled.nav`
   }
 
   .open-menu {
-    background: rgba(23, 23, 23, 0.2);
+    background: rgba(7, 8, 24, 0.8);
     border-radius: 20px;
-    backdrop-filter: blur(7.6px);
-    -webkit-backdrop-filter: blur(7.6px);
-    width: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(10px);
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     margin: 0 20px;
+    padding: 30px;
     overflow: hidden;
 
     @media (max-width: 640px) {
@@ -288,8 +289,10 @@ const Container = styled.nav`
 
   .open-link {
     height: 44px;
-    width: 91%;
-    margin: 20px;
+    width: 300px;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
 
     cursor: pointer;
     display: flex;
@@ -301,6 +304,10 @@ const Container = styled.nav`
     :hover {
       background-color: rgba(255, 255, 255, 0.3);
       padding: 0 20px;
+    }
+
+    :last-child {
+      border: none;
     }
   }
 `;
@@ -322,6 +329,7 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(400px);
 
   :hover {
     border-color: white;
