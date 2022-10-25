@@ -300,6 +300,42 @@ export default function Home() {
           </div>
         </div>
       </ContainerComponents2>
+
+      <ContainerComponents3 image={`${"/images/wallpaper2.jpg"}`}>
+        <div className="container-component-main">
+          <Image
+            src="/svgs/record.svg"
+            className="hero-device-icon"
+            alt="Play"
+            layout="intrinsic"
+            width="60"
+            height="60"
+          />{" "}
+          <h4 className="container-component-title">
+            Multiple pages with unique content
+          </h4>
+          <p className="container-component-content">
+            Build a website without writing a single line of code using Framer
+            components and customizing the entire content
+          </p>
+          <ButtonHero>
+            <Image
+              src="/svgs/download-duotone.svg"
+              className="hero-device-icon"
+              alt="Play"
+              layout="intrinsic"
+              width="30"
+              height="30"
+            />{" "}
+            DOWNLOAD
+          </ButtonHero>
+          <div className="container-component-divider"></div>
+          <p className="container-component-text">
+            Grow your business, reach new audiences, and hit your goals with
+            integrations.
+          </p>
+        </div>
+      </ContainerComponents3>
     </>
   );
 }
@@ -1313,5 +1349,77 @@ const ContainerComponents2 = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+`;
+
+const ContainerComponents3 = styled.section`
+  background: url(${(props) => props.image});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: fit-content;
+  font-family: "Manrope", sans-serif;
+  padding: 100px 30px;
+
+  .container-component-main {
+    display: flex;
+    flex-flow: column nowrap;
+    place-content: center flex-start;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .container-component-title {
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+
+  .container-component-content {
+    color: white;
+    font-size: 18px;
+  }
+
+  .container-component-button {
+    cursor: pointer;
+    background: ${(props) =>
+      props.primary
+        ? "linear-gradient(135deg, rgb(177, 117, 255) 0%, rgb(28, 20, 255) 100%)"
+        : "rgba(0, 0, 0, 0.7)"};
+    padding: 10px;
+    color: white;
+    border-radius: 24px 24px 0;
+    font-family: "Manrope", sans-serif;
+    font-weight: semibold;
+    font-size: 14px;
+    font-weight: bold;
+    backdrop-filter: blur(30px);
+    border: none;
+    outline: none;
+    display: flex;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 220px;
+    transition: all 0.3s ease-in-out;
+
+    border-style: ${(props) => (props.primary ? null : "solid")};
+    border-width: ${(props) => (props.primary ? null : `1px`)};
+    border-color: ${(props) =>
+      props.primary ? null : "rgba(255, 255, 255, 0.2)"};
+  }
+
+  .container-component-divider {
+    width: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    height: 1px;
+  }
+
+  .container-component-text {
+    color: rgba(255, 255, 255, 0.8);
   }
 `;
