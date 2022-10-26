@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import React from 'react'
-import styled from 'styled-components';
+import Image from "next/image";
+import React from "react";
+import styled from "styled-components";
 
 const PricingCard = () => {
   return (
@@ -104,9 +104,9 @@ const PricingCard = () => {
       </div>
     </Container>
   );
-}
+};
 
-export default PricingCard
+export default PricingCard;
 
 const Container = styled.div`
   .pricing-card-1 {
@@ -123,6 +123,12 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 395px) {
+      width:290px ;
+      align-items: center;
+      justify-content: center;
+    }
 
     box-shadow: rgb(0 0 0 / 0%) 0px 1.67332px 1.67332px 0px,
       rgb(0 0 0 / 1%) 0px 3.98421px 3.98421px 0px,
@@ -184,7 +190,6 @@ const Container = styled.div`
     }
   }
 `;
-
 
 const Button = styled.button`
   cursor: pointer;
