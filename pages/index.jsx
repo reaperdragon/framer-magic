@@ -302,6 +302,30 @@ export default function Home() {
       </ContainerComponents2>
 
       <ContainerComponents3 image={`${"/images/wallpaper2.jpg"}`}>
+        <div className="container-component-3">
+          <div className="container-component-3-card-1">
+            <h1>Sit less. You&apos;ll go far</h1>
+            <Image
+              src="/svgs/relax.svg"
+              className="hero-device-icon"
+              alt="Play"
+              layout="intrinsic"
+              width="220"
+              height="220"
+            />{" "}
+            <p>
+              Replace your regular desk at work with a standing desk to reduce
+              the amount of sedentary time in your day.
+            </p>
+          </div>
+          <div className="container-component-3-card-2">
+            <h3>Get maximum workout</h3>
+            <p>SWIMMING</p>
+            <div className="component-circle"></div>
+            <p>Burn calories the easy way and get tracking</p>
+          </div>
+        </div>
+
         <div className="container-component-main">
           <Image
             src="/svgs/record.svg"
@@ -1361,6 +1385,15 @@ const ContainerComponents3 = styled.section`
   font-family: "Manrope", sans-serif;
   padding: 100px 30px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  @media (max-width: 809px) {
+    flex-direction: column;
+  }
+
   .container-component-main {
     display: flex;
     flex-flow: column nowrap;
@@ -1421,5 +1454,92 @@ const ContainerComponents3 = styled.section`
 
   .container-component-text {
     color: rgba(255, 255, 255, 0.8);
+  }
+
+  .container-component-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .container-component-3-card-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    width: 300px;
+    gap: 10px;
+    padding: 30px;
+    border-radius: 30px;
+    backdrop-filter: blur(30px);
+    box-shadow: rgb(0 0 0 / 0%) 0px 1.67332px 1.67332px 0px,
+      rgb(0 0 0 / 1%) 0px 3.98421px 3.98421px 0px,
+      rgb(0 0 0 / 2%) 0px 7.25932px 7.25932px 0px,
+      rgb(0 0 0 / 3%) 0px 12.0684px 12.0684px 0px,
+      rgb(0 0 0 / 5%) 0px 19.5005px 19.5005px 0px,
+      rgb(0 0 0 / 8%) 0px 31.9014px 31.9014px 0px,
+      rgb(0 0 0 / 14%) 0px 54.9604px 54.9604px 0px,
+      rgb(0 0 0 / 25%) 0px 100px 100px 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    h1 {
+      color: white;
+      font-weight: bolder;
+      font-size: 22px;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .container-component-3-card-2 {
+    height: min-content;
+    flex: 0 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    place-content: center;
+    align-items: center;
+
+    gap: 20px;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: rgb(0 0 0 / 13%) 0px 0.836658px 0.836658px -0.3125px,
+      rgb(0 0 0 / 13%) 0px 1.9921px 1.9921px -0.625px,
+      rgb(0 0 0 / 13%) 0px 3.62966px 3.62966px -0.9375px,
+      rgb(0 0 0 / 13%) 0px 6.03419px 6.03419px -1.25px,
+      rgb(0 0 0 / 13%) 0px 9.75025px 9.75025px -1.5625px,
+      rgb(0 0 0 / 13%) 0px 15.9507px 15.9507px -1.875px,
+      rgb(0 0 0 / 13%) 0px 27.4802px 27.4802px -2.1875px,
+      rgb(0 0 0 / 13%) 0px 50px 50px -2.5px;
+    background: linear-gradient(
+      141deg,
+      rgb(254, 150, 83) 0%,
+      rgb(251, 41, 44) 100%
+    );
+
+    .component-circle {
+      width: 173px;
+      height: 173px;
+      border: 25px solid white;
+      border-radius: 50%;
+    }
+
+    h3 {
+      color: white;
+      font-weight: bolder;
+      font-size: 22px;
+    }
+
+    p {
+      color: rgba(0, 0, 0, 0.9);
+      font-weight: bold;
+      font-size: 14px;
+    }
   }
 `;
