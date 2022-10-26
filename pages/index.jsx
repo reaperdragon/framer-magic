@@ -360,6 +360,17 @@ export default function Home() {
           </p>
         </div>
       </ContainerComponents3>
+
+      <ContainerComponentPricingCards image={`${"/images/wallpaper3.jpg"}`}>
+        <div className="container-component-main">
+          <h4 className="container-component-title">Ready to start?</h4>
+          <p className="container-component-content">
+            Launch a site for free. Choose a site plan to unlock more features.
+          </p>
+
+          <div className="container-component-divider"></div>
+        </div>
+      </ContainerComponentPricingCards>
     </>
   );
 }
@@ -1541,5 +1552,49 @@ const ContainerComponents3 = styled.section`
       font-weight: bold;
       font-size: 14px;
     }
+  }
+`;
+
+const ContainerComponentPricingCards = styled.section`
+  background: rgb(8, 9, 47);
+  background-image: url(${(props) => props.image});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: fit-content;
+  font-family: "Manrope", sans-serif;
+  padding: 100px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  .container-component-main {
+    display: flex;
+    flex-flow: column nowrap;
+    place-content: center flex-start;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .container-component-title {
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+
+  .container-component-content {
+    color: white;
+    font-size: 18px;
+  }
+
+  .container-component-divider {
+    width: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    height: 1px;
   }
 `;
