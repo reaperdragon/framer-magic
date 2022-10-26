@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Header } from "../components";
 import "../styles/globals.css";
@@ -9,9 +10,11 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
-      {" "}
-      <Header isOpen={isOpen} toggle={toggle} />
-      <Component {...pageProps} />
+      <AnimatePresence>
+        {" "}
+        <Header isOpen={isOpen} toggle={toggle} />
+        <Component {...pageProps} />
+      </AnimatePresence>
     </div>
   );
 }

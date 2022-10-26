@@ -3,10 +3,13 @@ import Image from "next/image";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { data1 } from "../constants/data1";
-import { Header, PricingCard1, PricingCard3 } from "../components";
+import { Accordion, Header, PricingCard1, PricingCard3 } from "../components";
 import PricingCard2 from "../components/PricingCard2";
+import { useState } from "react";
+import { accordian } from "../constants/accordian";
 
 export default function Home() {
+
   return (
     <>
       <Wrapper as={motion.div}>
@@ -379,6 +382,16 @@ export default function Home() {
           <PricingCard3 />
         </div>
       </ContainerComponentPricingCards>
+
+      <FAQContainer>
+        <h1 className="title">FAQ</h1>
+
+        <div className="accordion">
+          {accordian.map(({ id, title, content }) => (
+            <Accordion key={id} title={title} content={content} />
+          ))}
+        </div>
+      </FAQContainer>
     </>
   );
 }
@@ -1626,6 +1639,44 @@ const ContainerComponentPricingCards = styled.section`
       flex-direction: column;
     }
   }
+`;
+
+const FAQContainer = styled.section`
+  padding: 100px 30px;
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  font-family: "Manrope", sans-serif;
+
+  @media (max-width: 540px) {
+    padding: 80px 20px;
+  }
+
+  .title {
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+
+  .accordion {
+    width: 100%;
+    margin: 2rem auto;
+    gap: 30px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transition: all 0.9s ease-in-out;
+
+    @media (max-width: 809px) {
+      width: 100%;
+    }
+  }
+
+ 
 `;
 
 const Button = styled.button`
