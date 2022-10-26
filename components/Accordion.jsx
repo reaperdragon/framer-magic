@@ -92,6 +92,12 @@ const Container = styled.div`
     transform: rotate(45deg);
   }
 
+  .accordion-icon {
+    transition: all 0.9s ease-in;
+
+    transform: rotate(0);
+  }
+
   .accordion-content {
     font-size: 18px;
     color: white;
