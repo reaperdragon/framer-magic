@@ -3,7 +3,8 @@ import Image from "next/image";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { data1 } from "../constants/data1";
-import { Header } from "../components";
+import { Header, PricingCard1, PricingCard3 } from "../components";
+import PricingCard2 from "../components/PricingCard2";
 
 export default function Home() {
   return (
@@ -369,6 +370,13 @@ export default function Home() {
           </p>
 
           <div className="container-component-divider"></div>
+        </div>
+        <div className="pricing-cards">
+          <PricingCard1 />
+
+          <PricingCard2 />
+
+          <PricingCard3 />
         </div>
       </ContainerComponentPricingCards>
     </>
@@ -1566,6 +1574,7 @@ const ContainerComponentPricingCards = styled.section`
   padding: 100px 30px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 50px;
@@ -1597,4 +1606,44 @@ const ContainerComponentPricingCards = styled.section`
     background: rgba(255, 255, 255, 0.3);
     height: 1px;
   }
+
+  .pricing-cards {
+    display: flex;
+    flex-flow: row nowrap;
+    place-content: center;
+    align-items: center;
+    gap: 30px;
+
+    @media (max-width: 809px) {
+      flex-direction: column;
+    }
+  }
+`;
+
+const Button = styled.button`
+  cursor: pointer;
+  background: ${(props) =>
+    props.primary ? "rgb(0,0,0)" : "rgb(255, 255, 255)"};
+  padding: 10px;
+  color: ${(props) => (props.primary ? "white" : "black")};
+  border-radius: 24px 24px 0;
+  font-family: "Manrope", sans-serif;
+  font-weight: semibold;
+  font-size: 14px;
+  font-weight: bold;
+  backdrop-filter: blur(30px);
+  border: none;
+  outline: none;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 220px;
+  transition: all 0.3s ease-in-out;
+
+  border-style: ${(props) => (props.primary ? null : "solid")};
+  border-width: ${(props) => (props.primary ? null : `1px`)};
+  border-color: ${(props) =>
+    props.primary ? null : "rgba(255, 255, 255, 0.2)"};
 `;
