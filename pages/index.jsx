@@ -1,11 +1,27 @@
 import Head from "next/head";
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
 import { data1 } from "../constants/data1";
 import { Accordion, PricingCard1, PricingCard3, Footer } from "../components";
 import PricingCard2 from "../components/PricingCard2";
 import { accordian } from "../constants/accordian";
+
+const main = {
+  initial: {
+    x: -100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.9,
+      delay: 0.3,
+      ease: "easeInOut",
+    },
+  },
+};
 
 export default function Home() {
   return (
@@ -16,7 +32,12 @@ export default function Home() {
           image={`${"/images/hero-bg.jpg"}`}
           mobimage={`${"/images/hero-bg-mobile.jpg"}`}
         >
-          <div className="content">
+          <motion.div
+            className="content"
+            initial="initial"
+            animate="animate"
+            variants={main}
+          >
             <ButtonIOS>
               Updated for iOS 16{" "}
               <Image
@@ -61,7 +82,7 @@ export default function Home() {
                 WATCH VIDEO
               </ButtonHero>
             </div>
-          </div>
+          </motion.div>
         </BgContainer>
       </Wrapper>
 
@@ -400,7 +421,7 @@ const Wrapper = styled.section`
   width: 100%;
   max-width: 100%;
   height: 860px;
-  background: papayawhip;
+  background: #000000;
   transition: all 0.35s ease-in-out;
 `;
 
@@ -408,7 +429,7 @@ const BgContainer = styled.section`
   width: 100%;
   max-width: 100%;
   height: 100%;
-  background: papayawhip;
+  background: #000000;
   transition: all 0.35s ease-in-out;
 
   background: url(${(props) => props.image});
@@ -464,6 +485,7 @@ const BgContainer = styled.section`
     color: white;
     font-weight: bold;
     text-shadow: 2px 2px 10px #000;
+    transition: all 0.6s linear 0.9;
 
     @media (max-width: 809px) {
       text-shadow: none;
@@ -475,6 +497,7 @@ const BgContainer = styled.section`
     color: rgba(255, 255, 255, 0.8);
     font-weight: light;
     text-shadow: 2px 2px 10px #000;
+    transition: all 0.6s linear 1.1;
 
     @media (max-width: 809px) {
       text-shadow: none;
@@ -484,6 +507,7 @@ const BgContainer = styled.section`
   .hero-btns {
     display: flex;
     gap: 20px;
+    transition: all 0.6s linear 1.1;
 
     @media (max-width: 809px) {
       display: flex;
@@ -562,6 +586,7 @@ const ButtonIOS = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out 0.6;
 
   @media (max-width: 810px) {
     font-size: 12px;
@@ -574,7 +599,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(7, 8, 24);
+  background: rgb(7, 8, 24);
   font-family: "Manrope", sans-serif;
   text-align: center;
   gap: 30px;
