@@ -3,13 +3,11 @@ import Image from "next/image";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { data1 } from "../constants/data1";
-import { Accordion, Header, PricingCard1, PricingCard3 } from "../components";
+import { Accordion, PricingCard1, PricingCard3, Footer } from "../components";
 import PricingCard2 from "../components/PricingCard2";
-import { useState } from "react";
 import { accordian } from "../constants/accordian";
 
 export default function Home() {
-
   return (
     <>
       <Wrapper as={motion.div}>
@@ -392,6 +390,8 @@ export default function Home() {
           ))}
         </div>
       </FAQContainer>
+
+      <Footer />
     </>
   );
 }
@@ -1675,8 +1675,6 @@ const FAQContainer = styled.section`
       width: 100%;
     }
   }
-
- 
 `;
 
 const Button = styled.button`

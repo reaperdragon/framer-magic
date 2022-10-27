@@ -87,13 +87,13 @@ const Container = styled.div`
   }
 
   .accordion-icon-rotate {
-    transition: all 0.9s ease-in;
+    transition: all 0.3s ease-in;
 
     transform: rotate(45deg);
   }
 
   .accordion-icon {
-    transition: all 0.9s ease-in;
+    transition: all 0.3s ease-in;
 
     transform: rotate(0);
   }
