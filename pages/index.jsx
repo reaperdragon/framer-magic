@@ -1731,6 +1731,7 @@ const ContainerComponentPricingCards = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   gap: 50px;
 
   @media (max-width: 809px) {
@@ -1769,9 +1770,15 @@ const ContainerComponentPricingCards = styled.section`
 
   .pricing-cards {
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 30px;
+    flex-flow: row nowrap;
+    place-content: center;
+    align-items: center;
+
+    @media (max-width: 1280px) {
+      width: 100%;
+      gap: 20px;
+    }
 
     @media (max-width: 809px) {
       width: 100%;

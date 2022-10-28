@@ -129,17 +129,26 @@ const Container = styled.div`
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(30px);
-    
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
+    @media (max-width: 1280px) {
+      width: max-content;
+      padding: 30px;
+    }
+
+    @media (max-width: 809px) {
+      width: 290px;
+    }
+
     @media (max-width: 395px) {
       width: 290px;
       align-items: center;
       justify-content: center;
+      padding: 10px;
     }
 
     box-shadow: rgb(0 0 0 / 0%) 0px 1.67332px 1.67332px 0px,

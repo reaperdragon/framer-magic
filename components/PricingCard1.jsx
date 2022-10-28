@@ -124,12 +124,21 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
 
-    @media (max-width: 395px) {
-      width:290px ;
-      align-items: center;
-      justify-content: center;
+    @media (max-width: 1280px) {
+      width: max-content;
+      padding: 30px;
     }
 
+    @media (max-width: 809px) {
+      width: 290px;
+    }
+
+    @media (max-width: 395px) {
+      width: 290px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
     box-shadow: rgb(0 0 0 / 0%) 0px 1.67332px 1.67332px 0px,
       rgb(0 0 0 / 1%) 0px 3.98421px 3.98421px 0px,
       rgb(0 0 0 / 2%) 0px 7.25932px 7.25932px 0px,
