@@ -1,14 +1,11 @@
 import { useInView } from "framer-motion";
-import Image from "next/image";
 import React, { useRef } from "react";
-import styled, { keyframes } from "styled-components";
 import {
   ContainerComponentPricing,
   FAQComponent,
   Footer,
   ReviewComponent,
 } from "../components";
-import { review } from "../constants/data3";
 
 const Pricing = () => {
   const cards4Ref = useRef(null);
