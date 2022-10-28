@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 import { motion, useInView } from "framer-motion";
-import { data1 } from "../constants/data1";
+
 import {
   Accordion,
   PricingCard1,
@@ -11,27 +11,14 @@ import {
   ContainerComponent,
   ContainerComponent2,
   ContainerComponent3,
+  Container1,
+  HeroSection,
 } from "../components";
+
 import PricingCard2 from "../components/PricingCard2";
 import { accordian } from "../constants/accordian";
 
 import { useRef } from "react";
-
-const main = {
-  initial: {
-    x: -100,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.9,
-      delay: 0.3,
-      ease: "easeInOut",
-    },
-  },
-};
 
 export default function Home() {
   const cardsRef = useRef(null);
@@ -50,103 +37,9 @@ export default function Home() {
 
   return (
     <>
-      <Wrapper as={motion.div}>
-        <BgContainer
-          as={motion.div}
-          image={`${"/images/hero-bg.jpg"}`}
-          mobimage={`${"/images/hero-bg-mobile.jpg"}`}
-        >
-          <motion.div
-            className="content"
-            initial="initial"
-            animate="animate"
-            variants={main}
-          >
-            <ButtonIOS>
-              Updated for iOS 16{" "}
-              <Image
-                src="/svgs/arrow-right-duotone.svg"
-                className="hero-device-icon"
-                alt="Play"
-                layout="intrinsic"
-                width="15"
-                height="15"
-              />{" "}
-            </ButtonIOS>
-            <h1 className="main">
-              Mix 3D <br /> and 2D design <br /> with Framer
-            </h1>
-            <p className="contentp">
-              This is a demo showing a fully responsive page with a Spline 3D
-              asset with mouse over interaction. It falls back to an image on
-              smaller devices.
-            </p>
-            <div className="hero-btns">
-              <ButtonHero primary>
-                {" "}
-                <Image
-                  src="/svgs/device-mobile-duotone.svg"
-                  className="hero-device-icon"
-                  alt="Play"
-                  layout="intrinsic"
-                  width="30"
-                  height="30"
-                />{" "}
-                GET THE APP
-              </ButtonHero>
-              <ButtonHero>
-                {" "}
-                <Image
-                  src="/svgs/play-duotone.svg"
-                  alt="Play"
-                  layout="intrinsic"
-                  width="30"
-                  height="30"
-                />{" "}
-                WATCH VIDEO
-              </ButtonHero>
-            </div>
-          </motion.div>
-        </BgContainer>
-      </Wrapper>
+      <HeroSection />
 
-      <Container>
-        <h1 className="container-title">
-          Trusted by 8,000 companies worldwide
-        </h1>
-        <h5 className="container-content">
-          Many teams choose Framer to iterate faster and publish at the blink of
-          an eye without complex loops
-        </h5>
-
-        <div className="container-comp">
-          <img src="/svgs/company-amazon.svg" alt="svg" />
-          <img src="/svgs/company-apple.svg" alt="svg" />
-          <img src="/svgs/company-facebook.svg" alt="svg" />
-          <img src="/svgs/company-airbnb.svg" alt="svg" />
-          <img src="/svgs/company-google.svg" alt="svg" />
-        </div>
-
-        <div className="container-sep"></div>
-
-        <h2 className="container-p">Publish a site in minutes</h2>
-
-        <div className="container-cards">
-          {data1?.map((data) => (
-            <div key={data.id} className="container-card">
-              <Image
-                src={data.icon}
-                alt={data.title}
-                layout="intrinsic"
-                width="32"
-                height="32"
-              />
-              <h3 className="container-card-title">{data.title}</h3>
-              <p className="container-card-content">{data.content}</p>
-            </div>
-          ))}
-        </div>
-      </Container>
+      <Container1 />
 
       <ContainerComponent cardsRef={cardsRef} cardsInView={cardsInView} />
 

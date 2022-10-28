@@ -7,3 +7,5 @@ export { default as Footer } from './Footer'
 export { default as ContainerComponent } from './ContainerComponent'
 export { default as ContainerComponent2 } from "./ContainerComponent2 ";
 export { default as ContainerComponent3 } from "./ContainerComponent3";
+export { default as Container1 } from './Container1'
+export {default as HeroSection} from './HeroSection'
