@@ -3,7 +3,15 @@ import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 import { motion, useInView } from "framer-motion";
 import { data1 } from "../constants/data1";
-import { Accordion, PricingCard1, PricingCard3, Footer, ContainerComponent } from "../components";
+import {
+  Accordion,
+  PricingCard1,
+  PricingCard3,
+  Footer,
+  ContainerComponent,
+  ContainerComponent2,
+  ContainerComponent3,
+} from "../components";
 import PricingCard2 from "../components/PricingCard2";
 import { accordian } from "../constants/accordian";
 
@@ -142,137 +150,9 @@ export default function Home() {
 
       <ContainerComponent cardsRef={cardsRef} cardsInView={cardsInView} />
 
-      <ContainerComponents2 ref={cards2Ref}>
-        {cards2InView && (
-          <>
-            <div className="container-component-main">
-              <Image
-                src="/svgs/trophy-duotone.svg"
-                className="hero-device-icon"
-                alt="Play"
-                layout="intrinsic"
-                width="60"
-                height="60"
-              />{" "}
-              <h4 className="container-component-title">
-                Text styles, variants and overlays
-              </h4>
-              <p className="container-component-content">
-                Build a website without writing a single line of code using
-                Framer components and customizing the entire content
-              </p>
-              <ButtonHero primary>
-                <Image
-                  src="/svgs/device-mobile-duotone.svg"
-                  className="hero-device-icon"
-                  alt="Play"
-                  layout="intrinsic"
-                  width="30"
-                  height="30"
-                />{" "}
-                GET THE APP
-              </ButtonHero>
-              <div className="container-component-divider"></div>
-              <p className="container-component-text">
-                Grow your business, reach new audiences, and hit your goals with
-                integrations.
-              </p>
-            </div>
+      <ContainerComponent2 cards2Ref={cards2Ref} cards2InView={cards2InView} />
 
-            <div className="forground">
-              <div className="container-main">
-                <div className="container-2-image-mockup-1-image-1">
-                  <div className="mockup-content-first">
-                    <h3>LIGHT</h3>
-                    <h3>TRACKING</h3>
-                  </div>
-                </div>
-                <h3 className="image-text">Super Shoes</h3>
-              </div>
-              <div className="mockup-circle-2">
-                <div className="circle-1-2">
-                  <div className="circle-2-2">
-                    <div className="circle-3-2">
-                      <div className="circle-4-2">
-                        <div className="circle-5-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-      </ContainerComponents2>
-
-      <ContainerComponents3 image={`${"/images/wallpaper2.jpg"}`}>
-        <div className="container-component-3" ref={cards3Ref}>
-          {cards3InView && (
-            <>
-              <div className="container-component-3-card-1">
-                <h1>Sit less. You&apos;ll go far</h1>
-                <Image
-                  src="/svgs/relax.svg"
-                  className="hero-device-icon"
-                  alt="Play"
-                  layout="intrinsic"
-                  width="220"
-                  height="220"
-                />{" "}
-                <p>
-                  Replace your regular desk at work with a standing desk to
-                  reduce the amount of sedentary time in your day.
-                </p>
-              </div>
-
-              <div className="container-component-3-card-2">
-                <h3>Get maximum workout</h3>
-                <p>SWIMMING</p>
-                <div className="component-circle"></div>
-                <p>Burn calories the easy way and get tracking</p>
-              </div>
-            </>
-          )}
-        </div>
-
-        <div className="container-component-main" ref={cards3Ref}>
-          {cards3InView && (
-            <>
-              <Image
-                src="/svgs/record.svg"
-                className="hero-device-icon"
-                alt="Play"
-                layout="intrinsic"
-                width="60"
-                height="60"
-              />{" "}
-              <h4 className="container-component-title">
-                Multiple pages with unique content
-              </h4>
-              <p className="container-component-content">
-                Build a website without writing a single line of code using
-                Framer components and customizing the entire content
-              </p>
-              <ButtonHero>
-                <Image
-                  src="/svgs/download-duotone.svg"
-                  className="hero-device-icon"
-                  alt="Play"
-                  layout="intrinsic"
-                  width="30"
-                  height="30"
-                />{" "}
-                DOWNLOAD
-              </ButtonHero>
-              <div className="container-component-divider"></div>
-              <p className="container-component-text">
-                Grow your business, reach new audiences, and hit your goals with
-                integrations.
-              </p>
-            </>
-          )}
-        </div>
-      </ContainerComponents3>
+      <ContainerComponent3 cards3Ref={cards3Ref} cards3InView={cards3InView} />
 
       <ContainerComponentPricingCards image={`${"/images/wallpaper3.jpg"}`}>
         <div className="container-component-main">

@@ -4,4 +4,6 @@ export {default as PricingCard} from './PricingCard2'
 export { default as PricingCard3 } from './PricingCard3'
 export { default as Accordion } from './Accordion'
 export { default as Footer } from './Footer'
-export {default as ContainerComponent} from './ContainerComponent'
+export { default as ContainerComponent } from './ContainerComponent'
+export { default as ContainerComponent2 } from "./ContainerComponent2 ";
+export { default as ContainerComponent3 } from "./ContainerComponent3";
