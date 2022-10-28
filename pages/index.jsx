@@ -1,11 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { data1 } from "../constants/data1";
 import { Accordion, PricingCard1, PricingCard3, Footer } from "../components";
 import PricingCard2 from "../components/PricingCard2";
 import { accordian } from "../constants/accordian";
+
+import { useEffect, useRef } from "react";
 
 const main = {
   initial: {
@@ -24,6 +26,9 @@ const main = {
 };
 
 export default function Home() {
+  const cardsRef = useRef(null);
+  const cardsInView = useInView(cardsRef, { once: false });
+
   return (
     <>
       <Wrapper as={motion.div}>
@@ -124,60 +129,88 @@ export default function Home() {
         </div>
       </Container>
 
-      <ContainerComponents image={`${"/images/wallpaper1.jpg"}`}>
-        <div className="mockups-1">
-          <div className="mockups-1-image-1">
-            <div className="mockup-content-1">
-              <div className="mockup-content-first">
-                <h3>LAC SUPERIEUR</h3>
-                <p>30 mins ago</p>
-                <span>3,054 STEPS</span>
+      <ContainerComponents image={`${"/images/wallpaper1.jpg"}`} ref={cardsRef}>
+        {cardsInView && (
+          <>
+            <div className="mockups-1">
+              <div className="mockups-1-image-1">
+                <div className="mockup-content-1">
+                  <div className="mockup-content-first">
+                    <h3>LAC SUPERIEUR</h3>
+                    <p>30 mins ago</p>
+                    <span>3,054 STEPS</span>
+                  </div>
+
+                  <div className="mockup-content-second">
+                    <button>VISIT</button>
+                    <span>3% HIGHER</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="mockup-content-second">
-                <button>VISIT</button>
-                <span>3% HIGHER</span>
+              <div className="mockups-1-image-2">
+                <div className="mockup-content-2">
+                  <div className="mockup-content-first">
+                    <h3>COIT TOWER</h3>
+                    <p>21 mins ago</p>
+                    <span>3,054 STEPS</span>
+                  </div>
+
+                  <div className="mockup-content-second">
+                    <button>VISIT</button>
+                    <span>3% HIGHER</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="mockups-1-image-2">
-            <div className="mockup-content-2">
-              <div className="mockup-content-first">
-                <h3>COIT TOWER</h3>
-                <p>21 mins ago</p>
-                <span>3,054 STEPS</span>
+            <div className="mockups-2">
+              <div className="mockup-relative">
+                <div className="mockups-2-1">
+                  <div className="mockups-2-content">
+                    {" "}
+                    <Image
+                      src="/svgs/person-simple-run-duotone.svg"
+                      alt="icon"
+                      layout="intrinsic"
+                      width="32"
+                      height="32"
+                    />{" "}
+                    <h1>Close Your Rings</h1>
+                  </div>
+                  <p className="mockups-2-text">
+                    Close your Move ring by hitting your personal goal of active
+                    calories burned.
+                  </p>
+                  <div className="mockup-content-2-1">
+                    <div className="mockup-content-first">
+                      <h3>NATHERLANDS</h3>
+                      <p>21 mins ago</p>
+                      <span>3,054 STEPS</span>
+                    </div>
+
+                    <div className="mockup-content-second">
+                      <button>VISIT</button>
+                      <span>3% HIGHER</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="mockup-circle">
+                  <div className="circle-1">
+                    <div className="circle-2">
+                      <div className="circle-3">
+                        <div className="circle-4">
+                          <div className="circle-5"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="mockup-content-second">
-                <button>VISIT</button>
-                <span>3% HIGHER</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mockups-2">
-          <div className="mockup-relative">
-            <div className="mockups-2-1">
-              <div className="mockups-2-content">
-                {" "}
-                <Image
-                  src="/svgs/person-simple-run-duotone.svg"
-                  alt="icon"
-                  layout="intrinsic"
-                  width="32"
-                  height="32"
-                />{" "}
-                <h1>Close Your Rings</h1>
-              </div>
-              <p className="mockups-2-text">
-                Close your Move ring by hitting your personal goal of active
-                calories burned.
-              </p>
               <div className="mockup-content-2-1">
                 <div className="mockup-content-first">
-                  <h3>NATHERLANDS</h3>
+                  <h3>MONTREAL</h3>
                   <p>21 mins ago</p>
                   <span>3,054 STEPS</span>
                 </div>
@@ -187,82 +220,58 @@ export default function Home() {
                   <span>3% HIGHER</span>
                 </div>
               </div>
-            </div>
-            <div className="mockup-circle">
-              <div className="circle-1">
-                <div className="circle-2">
-                  <div className="circle-3">
-                    <div className="circle-4">
-                      <div className="circle-5"></div>
-                    </div>
+
+              <div className="mockup-1-image-1">
+                <div className="mockup-content-1">
+                  <div className="mockup-content-first">
+                    <h3>SAN FRANSISCO</h3>
+                    <p>30 mins ago</p>
+                    <span>3,054 STEPS</span>
+                  </div>
+
+                  <div className="mockup-content-second">
+                    <button>VISIT</button>
+                    <span>3% HIGHER</span>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="mockup-content-2-1">
-            <div className="mockup-content-first">
-              <h3>MONTREAL</h3>
-              <p>21 mins ago</p>
-              <span>3,054 STEPS</span>
+            <div className="container-component-main">
+              <Image
+                src="/svgs/rocket-duotone.svg"
+                className="hero-device-icon"
+                alt="Play"
+                layout="intrinsic"
+                width="60"
+                height="60"
+              />{" "}
+              <h4 className="container-component-title">
+                Many types of components to customize
+              </h4>
+              <p className="container-component-content">
+                Build a website without writing a single line of code using
+                Framer components and customizing the entire content
+              </p>
+              <button className="container-component-button">
+                <Image
+                  src="/svgs/cards-duotone.svg"
+                  className="hero-device-icon"
+                  alt="Play"
+                  layout="intrinsic"
+                  width="30"
+                  height="30"
+                />{" "}
+                Learn More
+              </button>
+              <div className="container-component-divider"></div>
+              <p className="container-component-text">
+                Grow your business, reach new audiences, and hit your goals with
+                integrations.
+              </p>
             </div>
-
-            <div className="mockup-content-second">
-              <button>VISIT</button>
-              <span>3% HIGHER</span>
-            </div>
-          </div>
-
-          <div className="mockup-1-image-1">
-            <div className="mockup-content-1">
-              <div className="mockup-content-first">
-                <h3>SAN FRANSISCO</h3>
-                <p>30 mins ago</p>
-                <span>3,054 STEPS</span>
-              </div>
-
-              <div className="mockup-content-second">
-                <button>VISIT</button>
-                <span>3% HIGHER</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="container-component-main">
-          <Image
-            src="/svgs/rocket-duotone.svg"
-            className="hero-device-icon"
-            alt="Play"
-            layout="intrinsic"
-            width="60"
-            height="60"
-          />{" "}
-          <h4 className="container-component-title">
-            Many types of components to customize
-          </h4>
-          <p className="container-component-content">
-            Build a website without writing a single line of code using Framer
-            components and customizing the entire content
-          </p>
-          <button className="container-component-button">
-            <Image
-              src="/svgs/cards-duotone.svg"
-              className="hero-device-icon"
-              alt="Play"
-              layout="intrinsic"
-              width="30"
-              height="30"
-            />{" "}
-            Learn More
-          </button>
-          <div className="container-component-divider"></div>
-          <p className="container-component-text">
-            Grow your business, reach new audiences, and hit your goals with
-            integrations.
-          </p>
-        </div>
+          </>
+        )}
       </ContainerComponents>
 
       <ContainerComponents2>
@@ -732,6 +741,7 @@ const ContainerComponents = styled.section`
   height: fit-content;
   font-family: "Manrope", sans-serif;
   padding: 100px 30px;
+  background-color: rgb(21, 0, 103);
 
   display: flex;
   align-items: center;
@@ -751,6 +761,17 @@ const ContainerComponents = styled.section`
     display: flex;
     flex-direction: column;
     gap: 50px;
+
+    > * {
+      opacity: 0;
+      animation: ${heroAnimation} 1s 0.2s forwards;
+      :nth-child(1) {
+        animation-delay: 0s;
+      }
+      :nth-child(2) {
+        animation-delay: 0.3s;
+      }
+    }
 
     @media (max-width: 809px) {
       gap: 20px;
@@ -900,7 +921,11 @@ const ContainerComponents = styled.section`
       rgb(0 0 0 / 14%) 0px 54.9604px 54.9604px 0px,
       rgb(0 0 0 / 25%) 0px 100px 100px 0px;
     text-align: center;
-    z-index: 3;
+    z-index: 5;
+    opacity: 1;
+
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.6s forwards;
   }
 
   .mockup-content-2-1 {
@@ -923,6 +948,9 @@ const ContainerComponents = styled.section`
       rgb(0 0 0 / 8%) 0px 31.9014px 31.9014px 0px,
       rgb(0 0 0 / 14%) 0px 54.9604px 54.9604px 0px,
       rgb(0 0 0 / 25%) 0px 100px 100px 0px;
+
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.9s forwards;
   }
 
   .mockup-content-2-1 {
@@ -947,6 +975,8 @@ const ContainerComponents = styled.section`
       rgb(0 0 0 / 14%) 0px 54.9604px 54.9604px 0px,
       rgb(0 0 0 / 25%) 0px 100px 100px 0px;
     z-index: 1;
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.9s forwards;
   }
 
   .mockups-2-content {
@@ -1103,6 +1133,8 @@ const ContainerComponents = styled.section`
       rgb(0 0 0 / 8%) 0px 31.9014px 31.9014px 0px,
       rgb(0 0 0 / 14%) 0px 54.9604px 54.9604px 0px,
       rgb(0 0 0 / 25%) 0px 100px 100px 0px;
+    opacity: 0;
+    animation: ${heroAnimation} 1s 1.3s forwards;
   }
 
   .container-component-main {
@@ -1114,6 +1146,31 @@ const ContainerComponents = styled.section`
     gap: 30px;
     max-width: 400px;
     width: 100%;
+
+    > * {
+      opacity: 0;
+      animation: ${heroAnimation} 1s 0.2s forwards;
+      :nth-child(1) {
+        animation-delay: 0.6s;
+      }
+      :nth-child(2) {
+        animation-delay: 0.9s;
+      }
+      :nth-child(3) {
+        animation-delay: 1.1s;
+      }
+      :nth-child(4) {
+        animation-delay: 1.3s;
+      }
+
+      :nth-child(5) {
+        animation-delay: 1.6s;
+      }
+
+      :nth-child(6) {
+        animation-delay: 1.9s;
+      }
+    }
   }
 
   .container-component-title {
