@@ -7,7 +7,7 @@ import { Accordion, PricingCard1, PricingCard3, Footer } from "../components";
 import PricingCard2 from "../components/PricingCard2";
 import { accordian } from "../constants/accordian";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const main = {
   initial: {
@@ -27,7 +27,10 @@ const main = {
 
 export default function Home() {
   const cardsRef = useRef(null);
-  const cardsInView = useInView(cardsRef, { once: false });
+  const cardsInView = useInView(cardsRef, { once: true });
+
+  const cards2Ref = useRef(null);
+  const cards2InView = useInView(cards2Ref, { once: true });
 
   return (
     <>
@@ -274,63 +277,67 @@ export default function Home() {
         )}
       </ContainerComponents>
 
-      <ContainerComponents2>
-        <div className="container-component-main">
-          <Image
-            src="/svgs/trophy-duotone.svg"
-            className="hero-device-icon"
-            alt="Play"
-            layout="intrinsic"
-            width="60"
-            height="60"
-          />{" "}
-          <h4 className="container-component-title">
-            Text styles, variants and overlays
-          </h4>
-          <p className="container-component-content">
-            Build a website without writing a single line of code using Framer
-            components and customizing the entire content
-          </p>
-          <ButtonHero primary>
-            <Image
-              src="/svgs/device-mobile-duotone.svg"
-              className="hero-device-icon"
-              alt="Play"
-              layout="intrinsic"
-              width="30"
-              height="30"
-            />{" "}
-            GET THE APP
-          </ButtonHero>
-          <div className="container-component-divider"></div>
-          <p className="container-component-text">
-            Grow your business, reach new audiences, and hit your goals with
-            integrations.
-          </p>
-        </div>
-
-        <div className="forground">
-          <div className="container-main">
-            <div className="container-2-image-mockup-1-image-1">
-              <div className="mockup-content-first">
-                <h3>LIGHT</h3>
-                <h3>TRACKING</h3>
-              </div>
+      <ContainerComponents2 ref={cards2Ref}>
+        {cards2InView && (
+          <>
+            <div className="container-component-main">
+              <Image
+                src="/svgs/trophy-duotone.svg"
+                className="hero-device-icon"
+                alt="Play"
+                layout="intrinsic"
+                width="60"
+                height="60"
+              />{" "}
+              <h4 className="container-component-title">
+                Text styles, variants and overlays
+              </h4>
+              <p className="container-component-content">
+                Build a website without writing a single line of code using
+                Framer components and customizing the entire content
+              </p>
+              <ButtonHero primary>
+                <Image
+                  src="/svgs/device-mobile-duotone.svg"
+                  className="hero-device-icon"
+                  alt="Play"
+                  layout="intrinsic"
+                  width="30"
+                  height="30"
+                />{" "}
+                GET THE APP
+              </ButtonHero>
+              <div className="container-component-divider"></div>
+              <p className="container-component-text">
+                Grow your business, reach new audiences, and hit your goals with
+                integrations.
+              </p>
             </div>
-            <h3 className="image-text">Super Shoes</h3>
-          </div>
-          <div className="mockup-circle-2">
-            <div className="circle-1-2">
-              <div className="circle-2-2">
-                <div className="circle-3-2">
-                  <div className="circle-4-2">
-                    <div className="circle-5-2"></div>
+
+            <div className="forground">
+              <div className="container-main">
+                <div className="container-2-image-mockup-1-image-1">
+                  <div className="mockup-content-first">
+                    <h3>LIGHT</h3>
+                    <h3>TRACKING</h3>
+                  </div>
+                </div>
+                <h3 className="image-text">Super Shoes</h3>
+              </div>
+              <div className="mockup-circle-2">
+                <div className="circle-1-2">
+                  <div className="circle-2-2">
+                    <div className="circle-3-2">
+                      <div className="circle-4-2">
+                        <div className="circle-5-2"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </>
+        )}
       </ContainerComponents2>
 
       <ContainerComponents3 image={`${"/images/wallpaper2.jpg"}`}>
@@ -1261,6 +1268,23 @@ const ContainerComponents2 = styled.section`
     gap: 30px;
     max-width: 400px;
     width: 100%;
+
+    > * {
+      opacity: 0;
+      animation: ${heroAnimation} 1s 0.2s forwards;
+      :nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      :nth-child(2) {
+        animation-delay: 0.9s;
+      }
+      :nth-child(3) {
+        animation-delay: 1.1s;
+      }
+      :nth-child(4) {
+        animation-delay: 1.3s;
+      }
+    }
   }
 
   .container-component-title {
@@ -1370,6 +1394,9 @@ const ContainerComponents2 = styled.section`
       rgb(0 0 0 / 14%) 0px 54.9604px 54.9604px 0px,
       rgb(0 0 0 / 25%) 0px 100px 100px 0px;
 
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.2s forwards;
+
     .mockup-content-first {
       position: absolute;
       bottom: 0;
@@ -1420,6 +1447,9 @@ const ContainerComponents2 = styled.section`
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.1);
     z-index: -1;
+
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.1s forwards;
 
     @media (max-width: 809px) {
       bottom: -50px;
