@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const PricingCard3 = () => {
   return (
@@ -108,6 +108,18 @@ const PricingCard3 = () => {
 
 export default PricingCard3
 
+const heroAnimation = keyframes`
+0%{
+  opacity:0; transfrom: translateY(-10px); ; 
+}
+60%{
+  opacity:0.5; transfrom: translateY(-10px); ;
+}
+100% {
+  opacity:1; transform: translateY(0px);
+   }
+`;
+
 const Container = styled.div`
   .pricing-card-3 {
     width: 360px;
@@ -122,6 +134,9 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
 
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.9s forwards;
+
     @media (max-width: 1280px) {
       width: max-content;
       padding: 30px;
@@ -135,7 +150,7 @@ const Container = styled.div`
       width: 290px;
       align-items: center;
       justify-content: center;
-      padding:10px ;
+      padding: 10px;
     }
 
     box-shadow: rgb(0 0 0 / 0%) 0px 1.67332px 1.67332px 0px,

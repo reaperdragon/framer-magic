@@ -32,6 +32,14 @@ export default function Home() {
   const cards2Ref = useRef(null);
   const cards2InView = useInView(cards2Ref, { once: true });
 
+  const cards3Ref = useRef(null);
+  const cards3InView = useInView(cards3Ref, { once: true });
+
+  const cards4Ref = useRef(null);
+  const cards4InView = useInView(cards4Ref, { once: true });
+
+  const faqRef = useRef(null);
+
   return (
     <>
       <Wrapper as={motion.div}>
@@ -341,62 +349,71 @@ export default function Home() {
       </ContainerComponents2>
 
       <ContainerComponents3 image={`${"/images/wallpaper2.jpg"}`}>
-        <div className="container-component-3">
-          <div className="container-component-3-card-1">
-            <h1>Sit less. You&apos;ll go far</h1>
-            <Image
-              src="/svgs/relax.svg"
-              className="hero-device-icon"
-              alt="Play"
-              layout="intrinsic"
-              width="220"
-              height="220"
-            />{" "}
-            <p>
-              Replace your regular desk at work with a standing desk to reduce
-              the amount of sedentary time in your day.
-            </p>
-          </div>
-          <div className="container-component-3-card-2">
-            <h3>Get maximum workout</h3>
-            <p>SWIMMING</p>
-            <div className="component-circle"></div>
-            <p>Burn calories the easy way and get tracking</p>
-          </div>
+        <div className="container-component-3" ref={cards3Ref}>
+          {cards3InView && (
+            <>
+              <div className="container-component-3-card-1">
+                <h1>Sit less. You&apos;ll go far</h1>
+                <Image
+                  src="/svgs/relax.svg"
+                  className="hero-device-icon"
+                  alt="Play"
+                  layout="intrinsic"
+                  width="220"
+                  height="220"
+                />{" "}
+                <p>
+                  Replace your regular desk at work with a standing desk to
+                  reduce the amount of sedentary time in your day.
+                </p>
+              </div>
+
+              <div className="container-component-3-card-2">
+                <h3>Get maximum workout</h3>
+                <p>SWIMMING</p>
+                <div className="component-circle"></div>
+                <p>Burn calories the easy way and get tracking</p>
+              </div>
+            </>
+          )}
         </div>
 
-        <div className="container-component-main">
-          <Image
-            src="/svgs/record.svg"
-            className="hero-device-icon"
-            alt="Play"
-            layout="intrinsic"
-            width="60"
-            height="60"
-          />{" "}
-          <h4 className="container-component-title">
-            Multiple pages with unique content
-          </h4>
-          <p className="container-component-content">
-            Build a website without writing a single line of code using Framer
-            components and customizing the entire content
-          </p>
-          <ButtonHero>
-            <Image
-              src="/svgs/download-duotone.svg"
-              className="hero-device-icon"
-              alt="Play"
-              layout="intrinsic"
-              width="30"
-              height="30"
-            />{" "}
-            DOWNLOAD
-          </ButtonHero>
-          <div className="container-component-divider"></div>
-          <p className="container-component-text">
-            Grow your business, reach new audiences, and hit your goals with
-            integrations.
-          </p>
+        <div className="container-component-main" ref={cards3Ref}>
+          {cards3InView && (
+            <>
+              <Image
+                src="/svgs/record.svg"
+                className="hero-device-icon"
+                alt="Play"
+                layout="intrinsic"
+                width="60"
+                height="60"
+              />{" "}
+              <h4 className="container-component-title">
+                Multiple pages with unique content
+              </h4>
+              <p className="container-component-content">
+                Build a website without writing a single line of code using
+                Framer components and customizing the entire content
+              </p>
+              <ButtonHero>
+                <Image
+                  src="/svgs/download-duotone.svg"
+                  className="hero-device-icon"
+                  alt="Play"
+                  layout="intrinsic"
+                  width="30"
+                  height="30"
+                />{" "}
+                DOWNLOAD
+              </ButtonHero>
+              <div className="container-component-divider"></div>
+              <p className="container-component-text">
+                Grow your business, reach new audiences, and hit your goals with
+                integrations.
+              </p>
+            </>
+          )}
         </div>
       </ContainerComponents3>
 
@@ -409,21 +426,30 @@ export default function Home() {
 
           <div className="container-component-divider"></div>
         </div>
-        <div className="pricing-cards">
-          <PricingCard1 />
+        <div className="pricing-cards" ref={cards4Ref}>
+          {cards4InView && (
+            <>
+              <PricingCard1 />
 
-          <PricingCard2 />
+              <PricingCard2 />
 
-          <PricingCard3 />
+              <PricingCard3 />
+            </>
+          )}
         </div>
       </ContainerComponentPricingCards>
 
       <FAQContainer>
         <h1 className="title">FAQ</h1>
 
-        <div className="accordion">
+        <div className="accordion" ref={faqRef}>
           {accordian.map(({ id, title, content }) => (
-            <Accordion key={id} title={title} content={content} />
+            <Accordion
+              key={id}
+              title={title}
+              content={content}
+              faqRef={faqRef}
+            />
           ))}
         </div>
       </FAQContainer>
@@ -1473,6 +1499,9 @@ const ContainerComponents2 = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.1s forwards;
   }
 
   .circle-2-2 {
@@ -1576,6 +1605,23 @@ const ContainerComponents3 = styled.section`
     gap: 30px;
     max-width: 400px;
     width: 100%;
+
+    > * {
+      opacity: 0;
+      animation: ${heroAnimation} 1s 0.2s forwards;
+      :nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      :nth-child(2) {
+        animation-delay: 0.9s;
+      }
+      :nth-child(3) {
+        animation-delay: 1.1s;
+      }
+      :nth-child(4) {
+        animation-delay: 1.3s;
+      }
+    }
   }
 
   .container-component-title {
@@ -1658,6 +1704,9 @@ const ContainerComponents3 = styled.section`
       rgb(0 0 0 / 25%) 0px 100px 100px 0px;
     background-color: rgba(0, 0, 0, 0.2);
 
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.3s forwards;
+
     h1 {
       color: white;
       font-weight: bolder;
@@ -1696,6 +1745,9 @@ const ContainerComponents3 = styled.section`
       rgb(251, 41, 44) 100%
     );
 
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.6s forwards;
+
     .component-circle {
       width: 173px;
       height: 173px;
@@ -1726,6 +1778,8 @@ const ContainerComponentPricingCards = styled.section`
   height: fit-content;
   font-family: "Manrope", sans-serif;
   padding: 100px 30px;
+
+  animation: ${heroAnimation} 1s 0.1s forwards;
 
   display: flex;
   flex-direction: column;
@@ -1818,6 +1872,9 @@ const FAQContainer = styled.section`
     flex-direction: column;
     gap: 30px;
     transition: all 0.9s ease-in-out;
+
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.1s forwards;
 
     @media (max-width: 809px) {
       width: 100%;
