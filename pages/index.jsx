@@ -4,9 +4,6 @@ import styled, { keyframes } from "styled-components";
 import { motion, useInView } from "framer-motion";
 
 import {
-  Accordion,
-  PricingCard1,
-  PricingCard3,
   Footer,
   ContainerComponent,
   ContainerComponent2,
@@ -16,9 +13,6 @@ import {
   ContainerComponentPricing,
   FAQComponent,
 } from "../components";
-
-import PricingCard2 from "../components/PricingCard2";
-import { accordian } from "../constants/accordian";
 
 import { useRef } from "react";
 

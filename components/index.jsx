@@ -10,4 +10,5 @@ export { default as ContainerComponent3 } from "./ContainerComponent3";
 export { default as Container1 } from './Container1'
 export { default as HeroSection } from './HeroSection'
 export { default as ContainerComponentPricing } from './ContainerComponentPricing'
-export {default as FAQComponent} from './FAQComponent'
+export { default as FAQComponent } from './FAQComponent'
+export {default as ReviewComponent} from './ReviewComponent'

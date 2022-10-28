@@ -3,9 +3,9 @@ import styled, { keyframes } from "styled-components";
 import { PricingCard1, PricingCard3 } from ".";
 import PricingCard2 from "./PricingCard2";
 
-const ContainerComponentPricing = ({ cards4Ref, cards4InView }) => {
+const ContainerComponentPricing = ({ cards4Ref, cards4InView,newimage }) => {
   return (
-    <ContainerComponentPricingCards image={`${"/images/wallpaper3.jpg"}`}>
+    <ContainerComponentPricingCards image={`${"/images/wallpaper3.jpg"}`} newimage={newimage}>
       <div className="container-component-main">
         <h4 className="container-component-title">Ready to start?</h4>
         <p className="container-component-content">
@@ -45,7 +45,7 @@ const heroAnimation = keyframes`
 
 const ContainerComponentPricingCards = styled.section`
   background: rgb(8, 9, 47);
-  background-image: url(${(props) => props.image});
+  background-image: url(${(props) => props.newimage ? props.newimage : props.image});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
