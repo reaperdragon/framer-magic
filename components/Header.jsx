@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -102,6 +102,19 @@ const Header = ({ isOpen, toggle }) => {
 
 export default Header;
 
+
+const heroAnimation = keyframes`
+0%{
+  opacity:0; transfrom: translateY(-100px); ; 
+}
+60%{
+  opacity:0.5; transfrom: translateY(-100px); ;
+}
+100% {
+  opacity:1; transform: translateY(0px);
+   }
+`;
+
 const Container = styled.nav`
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -117,6 +130,17 @@ const Container = styled.nav`
   margin: 0 auto;
   font-family: "Manrope", sans-serif;
   padding: 0 30px;
+
+  > * {
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.2s forwards;
+    :nth-child(1) {
+      animation-delay: 0s;
+    }
+    :nth-child(2) {
+      animation-delay: 0.3s;
+    }
+  }
 
   .header-logo {
     display: flex;
@@ -291,6 +315,29 @@ const Container = styled.nav`
     margin: 0 20px;
     padding: 30px;
     overflow: hidden;
+
+    > * {
+      opacity: 0;
+      animation: ${heroAnimation} 1s 0.2s forwards;
+      :nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      :nth-child(2) {
+        animation-delay: 0.6s;
+      }
+      :nth-child(3) {
+        animation-delay: 0.9s;
+      }
+      :nth-child(4) {
+        animation-delay: 1.1s;
+      }
+      :nth-child(5) {
+        animation-delay: 1.4s;
+      }
+      :nth-child(6) {
+        animation-delay: 1.7s;
+      }
+    }
 
     @media (max-width: 640px) {
       width: 100%;
