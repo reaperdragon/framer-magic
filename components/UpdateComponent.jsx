@@ -1,47 +1,87 @@
 import Image from "next/image";
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { updateFix } from "../constants/data4";
 
-const UpdateComponent = ({ mainImage, title ,content}) => {
+const UpdateComponent = ({
+  mainImage,
+  title,
+  content,
+  cardsRef,
+  cardsInView,
+}) => {
   return (
-    <ContentWrapper>
-      <div className="update-wrapper">
-        <h5 className="update-date">July {new Date().getFullYear()}</h5>
-        <img
-          src={mainImage}
-          className="component-image"
-          alt="main-image"
-        />
-        <h1 className="update-heading">{title }</h1>
-        <p className="update-content">
-         {content}
-        </p>
-        <div className="divider"></div>
-        <h4 className="update-te">WHAT&apos;S FIXED</h4>
-        <div className="component">
-          {updateFix?.map((data) => (
-            <div className="item" key={data.id}>
-              <Image
-                src={data.icon}
-                alt="update-icon"
-                layout="intrinsic"
-                width="32"
-                height="32"
-              />
-              <h2 className="update-component-title">{data.title}</h2>
-              <p className="update-component-content">{data.content}</p>
-            </div>
-          ))}
+    <ContentWrapper ref={cardsRef}>
+      {cardsInView && (
+        <div className="update-wrapper">
+          <h5 className="update-date">July {new Date().getFullYear()}</h5>
+          <img src={mainImage} className="component-image" alt="main-image" />
+          <h1 className="update-heading">{title}</h1>
+          <p className="update-content">{content}</p>
+          <div className="divider"></div>
+          <h4 className="update-te">WHAT&apos;S FIXED</h4>
+          <div className="component">
+            {updateFix?.map((data) => (
+              <div className="item" key={data.id}>
+                <Image
+                  src={data.icon}
+                  alt="update-icon"
+                  layout="intrinsic"
+                  width="32"
+                  height="32"
+                />
+                <h2 className="update-component-title">{data.title}</h2>
+                <p className="update-component-content">{data.content}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </ContentWrapper>
   );
 };
 
 export default UpdateComponent;
 
+const heroAnimation = keyframes`
+0%{
+  opacity:0; transfrom: translateY(-10px); ; 
+}
+60%{
+  opacity:0.5; transfrom: translateY(-10px); ;
+}
+100% {
+  opacity:1; transform: translateY(0px);
+   }
+`;
+
 const ContentWrapper = styled.div`
+  > * {
+    opacity: 0;
+    animation: ${heroAnimation} 1s 0.2s forwards;
+    :nth-child(1) {
+      animation-delay: 0s;
+    }
+    :nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    :nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    :nth-child(4) {
+      animation-delay: 0.9s;
+    }
+    :nth-child(5) {
+      animation-delay: 1.1s;
+    }
+    :nth-child(6) {
+      animation-delay: 1.3s;
+    }
+    :nth-child(7) {
+      animation-delay: 1.6s;
+    }
+  }
+
   .update-wrapper {
     max-width: 800px;
     height: min-content;

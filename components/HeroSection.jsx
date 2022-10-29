@@ -85,8 +85,6 @@ const HeroSection = () => {
 
 export default HeroSection
 
-
-
 const heroAnimation = keyframes`
 0%{
   opacity:0; transfrom: translateY(-10px); ; 
