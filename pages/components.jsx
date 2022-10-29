@@ -78,7 +78,7 @@ const Components = () => {
 
       <ContainerComponent2 cards2Ref={cards2Ref} cards2InView={cards2InView} />
 
-      <ContainerComponent3 cards2Ref={cards3Ref} cards2InView={cards3InView} />
+      <ContainerComponent3 cards3Ref={cards3Ref} cards3InView={cards3InView} />
 
       <Footer />
     </>
