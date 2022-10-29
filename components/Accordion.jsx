@@ -88,7 +88,14 @@ const Container = styled.div`
 
     @media (max-width: 809px) {
       font-size: 20px;
+      
     }
+
+    @media (max-width: 540px) {
+      font-size: 16px;
+      font-weight:normal ;
+    }
+
   }
 
   .accordion-icon-rotate {

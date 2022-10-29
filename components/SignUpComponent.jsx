@@ -66,7 +66,7 @@ const BgContainer = styled.section`
     overflow: hidden;
     will-change: transform;
     max-width: 500px;
-    width: 500px;
+  
     height: min-content;
     flex: 0 0 auto;
     display: flex;

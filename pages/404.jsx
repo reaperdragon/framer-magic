@@ -78,5 +78,6 @@ const BgContainer = styled.div`
     font-size: 20px;
     font-weight: normal;
     color: rgba(255, 255, 255, 0.7);
+    text-align:center ;
   }
 `;
