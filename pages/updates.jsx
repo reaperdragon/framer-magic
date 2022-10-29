@@ -2,27 +2,42 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { Footer, UpdateComponent } from "../components";
 
 const Updates = () => {
   return (
     <>
-      <Wrapper as={motion.div}>
-        <BgContainer as={motion.div} image={`${"/images/wallpaper5.jpg"}`}>
-          <div className="main-container">
-            <Image
-              src="/svgs/record-duotone-black.svg"
-              alt="Play"
-              layout="intrinsic"
-              width="45"
-              height="45"
-            />{" "}
-            <h1 className="section-name">Updates</h1>
-            <p className="section-content">
-              Stay up-to-date with new courses, tutorials and livestreams.
-            </p>
-          </div>
-        </BgContainer>
-      </Wrapper>
+      <BgContainer as={motion.div} image={`${"/images/wallpaper5.jpg"}`}>
+        <div className="main-container">
+          <Image
+            src="/svgs/record-duotone-black.svg"
+            alt="Play"
+            layout="intrinsic"
+            width="45"
+            height="45"
+          />{" "}
+          <h1 className="section-name">Updates</h1>
+          <p className="section-content">
+            Stay up-to-date with new courses, tutorials and livestreams.
+          </p>
+          <div className="divider"></div>
+        </div>
+
+        <UpdateComponent
+          mainImage="https://images.unsplash.com/photo-1627637819848-7074cb1565e8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
+          title="Create 3D Site with Spline and React"
+          content="Framer offers built-in analytics to help you gain insight on the performance of your website. These analytics are privacy compatible, live, and accurate. However, in order to gain a more detailed overview of activity within your sites, you may want to consider integrating another tool such as Google Analytics and combine the insights together."
+        />
+      </BgContainer>
+      <UpdateWrapper>
+        <UpdateComponent
+          mainImage="https://images.unsplash.com/photo-1626428091984-48f9ffbf927c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1233&q=80"
+          title="Build an Animated App with Rive and SwiftUI"
+          content="Design and code an iOS app with Rive animated assets, icon animations, custom layouts and interactions"
+        />
+      </UpdateWrapper>
+
+      <Footer />
     </>
   );
 };
@@ -41,44 +56,23 @@ const heroAnimation = keyframes`
    }
 `;
 
-const Wrapper = styled.section`
-  width: 100%;
-  max-width: 100%;
-  height: min-content;
-  background: #000000;
-  transition: all 0.35s ease-in-out;
-`;
-
 const BgContainer = styled.section`
-  width: 100%;
-  max-width: 100%;
-
-  background: #000000;
-  transition: all 0.35s ease-in-out;
-
-  font-family: "Manrope", sans-serif;
-
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: min-content;
-  flex: 0 0 auto;
-  display: flex;
-  flex-flow: column wrap;
-  place-content: center;
-  align-items: center;
-  gap: 30px;
-  padding: 100px 30px;
-  background-color: rgb(0, 0, 0);
-
-  background: url(${(props) => props.image});
-  top: 0;
-  left: 0;
-  right: 0;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: min-content;
+  font-family: "Manrope", sans-serif;
+  padding: 100px 30px;
+
+  animation: ${heroAnimation} 1s 0.1s forwards;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(${(props) => props.image});
+
+  gap: 31px;
 
   .main-container {
     position: relative;
@@ -88,11 +82,15 @@ const BgContainer = styled.section`
     height: min-content;
     flex: 0 0 auto;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     place-content: center flex-start;
     align-items: center;
     gap: 31px;
     padding: 0px;
+
+    @media (max-width: 809px) {
+      margin-top: 120px;
+    }
   }
 
   .section-name {
@@ -102,9 +100,25 @@ const BgContainer = styled.section`
   }
 
   .section-content {
-    font-size: 14px;
+    font-size: 18px;
     color: #000000;
+    text-align: center;
   }
+
+  .divider {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    height: 1px;
+  }
+`;
+
+const UpdateWrapper = styled.section`
+  background: #000;
+  padding: 100px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Manrope", sans-serif;
 `;
 
 const ButtonHero = styled.button`
