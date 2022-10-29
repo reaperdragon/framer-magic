@@ -58,6 +58,9 @@ const BgContainer = styled.section`
   background-color: rgb(7, 8, 24);
   gap: 10px;
 
+  opacity: 0;
+  animation: ${heroAnimation} 1s 0.2s forwards;
+
   .signup-component {
     position: relative;
     overflow: hidden;
@@ -84,6 +87,32 @@ const BgContainer = styled.section`
       rgb(0 0 0 / 25%) 0px 100px 100px 0px;
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
+
+    > * {
+      opacity: 0;
+      animation: ${heroAnimation} 1s 0.2s forwards;
+      :nth-child(1) {
+        animation-delay: 0s;
+      }
+      :nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      :nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      :nth-child(4) {
+        animation-delay: 0.9s;
+      }
+      :nth-child(5) {
+        animation-delay: 1.1s;
+      }
+      :nth-child(6) {
+        animation-delay: 1.3s;
+      }
+      :nth-child(7) {
+        animation-delay: 1.6s;
+      }
+    }
   }
 
   .signup-title {
