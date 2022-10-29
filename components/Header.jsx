@@ -51,32 +51,32 @@ const Header = ({ isOpen, toggle }) => {
         {isOpen && (
           <div className="open">
             <ul className="open-menu">
-              <li className="open-link">
+              <li className="open-link" onClick={toggle}>
                 <Link href="/components">
                   <a>Components</a>
                 </Link>
               </li>
-              <li className="open-link">
+              <li className="open-link" onClick={toggle}>
                 <Link href="/pricing">
                   <a>Pricing</a>
                 </Link>
               </li>
-              <li className="open-link">
+              <li className="open-link" onClick={toggle}>
                 <Link href="/updates">
                   <a>Updates</a>
                 </Link>
               </li>
-              <li className="open-link">
+              <li className="open-link" onClick={toggle}>
                 <Link href="/supports">
                   <a>Supports</a>
                 </Link>
               </li>
-              <li className="open-link">
+              <li className="open-link" onClick={toggle}>
                 <Link href="/community">
                   <a>Community</a>
                 </Link>
               </li>
-              <li className="open-link">
+              <li className="open-link" onClick={toggle}>
                 <Link href="/signup">
                   <a>Sing In</a>
                 </Link>
