@@ -1,4 +1,5 @@
 import { motion, useInView } from "framer-motion";
+import Head from "next/head";
 import Image from "next/image";
 import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
@@ -11,6 +12,12 @@ const Updates = () => {
   
   return (
     <>
+      {" "}
+      <Head>
+        <title>Updates | Framer Magic</title>
+        <link rel="icon" href="/svgs/framer-logo-duotone.svg" />
+      </Head>
+
       <BgContainer as={motion.div} image={`${"/images/wallpaper5.jpg"}`}>
         <div className="main-container">
           <Image
@@ -44,7 +51,6 @@ const Updates = () => {
           content="Design and code an iOS app with Rive animated assets, icon animations, custom layouts and interactions"
         />
       </UpdateWrapper>
-
       <Footer />
     </>
   );

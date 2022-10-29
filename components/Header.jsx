@@ -8,12 +8,17 @@ const Header = ({ isOpen, toggle }) => {
     <>
       <Container>
         <div className="header-logo">
-          <Image
-            src="/svgs/logo-dc.svg"
-            layout="intrinsic"
-            width="24"
-            height="24"
-          />
+          <Link href="/">
+            <a>
+              {" "}
+              <Image
+                src="/svgs/logo-dc.svg"
+                layout="intrinsic"
+                width="24"
+                height="24"
+              />
+            </a>
+          </Link>
         </div>
 
         {isOpen ? (

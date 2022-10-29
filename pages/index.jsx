@@ -33,6 +33,11 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Framer Magic</title>
+        <link rel="icon" href="/svgs/framer-logo-duotone.svg" />
+      </Head>
+
       <HeroSection />
 
       <Container1 />

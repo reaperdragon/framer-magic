@@ -1,4 +1,5 @@
 import { motion, useInView } from "framer-motion";
+import Head from "next/head";
 import Image from "next/image";
 import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
@@ -21,6 +22,10 @@ const Components = () => {
 
   return (
     <>
+      <Head>
+        <title>Components | Framer Magic</title>
+        <link rel="icon" href="/svgs/framer-logo-duotone.svg" />
+      </Head>
       <Wrapper as={motion.div}>
         <BgContainer
           as={motion.div}
