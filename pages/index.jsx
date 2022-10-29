@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 import {
   Footer,

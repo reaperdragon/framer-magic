@@ -71,6 +71,7 @@ const BgContainer = styled.section`
   height: min-content;
   font-family: "Manrope", sans-serif;
   padding: 100px 30px;
+  background: #000000;
 
   display: flex;
   flex-direction: column;

@@ -77,7 +77,7 @@ const Header = ({ isOpen, toggle }) => {
                 </Link>
               </li>
               <li className="open-link">
-                <Link href="/signin">
+                <Link href="/signup">
                   <a>Sing In</a>
                 </Link>
               </li>
@@ -85,7 +85,11 @@ const Header = ({ isOpen, toggle }) => {
           </div>
         )}
 
-        <Button>Sign Up</Button>
+        <Button>
+          <Link href="/signup">
+            <a>Sing Up</a>
+          </Link>
+        </Button>
       </Container>
     </>
   );
