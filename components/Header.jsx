@@ -83,7 +83,7 @@ const Header = ({ isOpen, toggle }) => {
               </li>
               <li className="open-link" onClick={toggle}>
                 <Link href="/signup">
-                  <a>Sing In</a>
+                  <a>Sign In</a>
                 </Link>
               </li>
             </ul>
@@ -92,7 +92,7 @@ const Header = ({ isOpen, toggle }) => {
 
         <Button>
           <Link href="/signup">
-            <a>Sing Up</a>
+            <a>Sign Up</a>
           </Link>
         </Button>
       </Container>
