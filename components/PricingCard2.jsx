@@ -1,124 +1,124 @@
-import Image from 'next/image';
-import React from 'react'
-import styled, { keyframes } from 'styled-components';
+import Image from "next/image";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const PricingCard2 = () => {
-    return (
-      <Container>
-        <div className="pricing-card-2">
-          <p className="project-detail">
-            <Image
-              src="/svgs/medal-duotone.svg"
-              className="hero-device-icon"
-              alt="Play"
-              layout="intrinsic"
-              width="16"
-              height="16"
-            />{" "}
-            POPULAR{" "}
-          </p>
-          <div className="divider"></div>
+  return (
+    <Container>
+      <div className="pricing-card-2">
+        <p className="project-detail">
           <Image
-            src="/svgs/record-duotone.svg"
+            src="/svgs/medal-duotone.svg"
             className="hero-device-icon"
             alt="Play"
             layout="intrinsic"
-            width="32"
-            height="32"
+            width="16"
+            height="16"
           />{" "}
-          <p className="plan">BASIC PLAN</p>
-          <h2 className="price">$30/mo</h2>
-          <p className="project-details">
-            Billed yearly{" "}
+          POPULAR{" "}
+        </p>
+        <div className="divider"></div>
+        <Image
+          src="/svgs/record-duotone.svg"
+          className="hero-device-icon"
+          alt="Play"
+          layout="intrinsic"
+          width="32"
+          height="32"
+        />{" "}
+        <p className="plan">BASIC PLAN</p>
+        <h2 className="price">$30/mo</h2>
+        <p className="project-details">
+          Billed yearly{" "}
+          <Image
+            src="/svgs/toggle-left-duotone.svg"
+            className="hero-device-icon"
+            alt="Play"
+            layout="intrinsic"
+            width="16"
+            height="16"
+          />{" "}
+        </p>
+        <div className="content-main">
+          <div className="content">
+            {" "}
             <Image
-              src="/svgs/toggle-left-duotone.svg"
-              className="hero-device-icon"
-              alt="Play"
-              layout="intrinsic"
-              width="16"
-              height="16"
-            />{" "}
-          </p>
-          <div className="content-main">
-            <div className="content">
-              {" "}
-              <Image
-                src="/svgs/globe-duotone.svg"
-                className="hero-device-icon"
-                alt="Play"
-                layout="intrinsic"
-                width="30"
-                height="30"
-              />{" "}
-              <p className="content-text">Custom domain</p>
-            </div>
-            <div className="content">
-              {" "}
-              <Image
-                src="/svgs/lock-duotone.svg"
-                className="hero-device-icon"
-                alt="Play"
-                layout="intrinsic"
-                width="30"
-                height="30"
-              />{" "}
-              <p className="content-text">Password project</p>
-            </div>
-            <div className="content">
-              {" "}
-              <Image
-                src="/svgs/books-duotone.svg"
-                className="hero-device-icon"
-                alt="Play"
-                layout="intrinsic"
-                width="30"
-                height="30"
-              />{" "}
-              <p className="content-text">10GB bandwidth</p>
-            </div>
-            <div className="content">
-              {" "}
-              <Image
-                src="/svgs/stack-duotone.svg"
-                className="hero-device-icon"
-                alt="Play"
-                layout="intrinsic"
-                width="30"
-                height="30"
-              />{" "}
-              <p className="content-text">1,000 CMS items</p>
-            </div>
-            <div className="content">
-              {" "}
-              <Image
-                src="/svgs/person-duotone.svg"
-                className="hero-device-icon"
-                alt="Play"
-                layout="intrinsic"
-                width="30"
-                height="30"
-              />{" "}
-              <p className="content-text">10,000 visitors</p>
-            </div>
-          </div>
-          <div className="divider"></div>
-          <Button>
-            <Image
-              src="/svgs/credit-card-duotone.svg"
+              src="/svgs/globe-duotone.svg"
               className="hero-device-icon"
               alt="Play"
               layout="intrinsic"
               width="30"
               height="30"
             />{" "}
-            SUBSCRIBE
-          </Button>
+            <p className="content-text">Custom domain</p>
+          </div>
+          <div className="content">
+            {" "}
+            <Image
+              src="/svgs/lock-duotone.svg"
+              className="hero-device-icon"
+              alt="Play"
+              layout="intrinsic"
+              width="30"
+              height="30"
+            />{" "}
+            <p className="content-text">Password project</p>
+          </div>
+          <div className="content">
+            {" "}
+            <Image
+              src="/svgs/books-duotone.svg"
+              className="hero-device-icon"
+              alt="Play"
+              layout="intrinsic"
+              width="30"
+              height="30"
+            />{" "}
+            <p className="content-text">10GB bandwidth</p>
+          </div>
+          <div className="content">
+            {" "}
+            <Image
+              src="/svgs/stack-duotone.svg"
+              className="hero-device-icon"
+              alt="Play"
+              layout="intrinsic"
+              width="30"
+              height="30"
+            />{" "}
+            <p className="content-text">1,000 CMS items</p>
+          </div>
+          <div className="content">
+            {" "}
+            <Image
+              src="/svgs/person-duotone.svg"
+              className="hero-device-icon"
+              alt="Play"
+              layout="intrinsic"
+              width="30"
+              height="30"
+            />{" "}
+            <p className="content-text">10,000 visitors</p>
+          </div>
         </div>
-      </Container>
-    );
-}
+        <div className="divider"></div>
+        <Button>
+          <Image
+            src="/svgs/credit-card-duotone.svg"
+            className="hero-device-icon"
+            alt="Play"
+            layout="intrinsic"
+            width="30"
+            height="30"
+          />{" "}
+          SUBSCRIBE
+        </Button>
+      </div>
+    </Container>
+  );
+};
 
-export default PricingCard2
+export default PricingCard2;
 
 const heroAnimation = keyframes`
 0%{

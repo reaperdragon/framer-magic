@@ -7,8 +7,6 @@ const ReviewComponent = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
-
-
   return (
     <ReviewContainer>
       <h1 className="review-title">How students learned from our courses</h1>

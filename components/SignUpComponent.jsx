@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import React from 'react'
-import styled, { keyframes } from 'styled-components';
+import { motion } from "framer-motion";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const SignUpComponent = () => {
   return (
@@ -25,10 +25,9 @@ const SignUpComponent = () => {
       </div>
     </BgContainer>
   );
-}
+};
 
-export default SignUpComponent
-
+export default SignUpComponent;
 
 const heroAnimation = keyframes`
 0%{
@@ -66,7 +65,7 @@ const BgContainer = styled.section`
     overflow: hidden;
     will-change: transform;
     max-width: 500px;
-  
+
     height: min-content;
     flex: 0 0 auto;
     display: flex;

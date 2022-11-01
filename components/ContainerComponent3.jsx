@@ -1,10 +1,8 @@
-import Image from 'next/image';
-import React from 'react'
-import styled, { keyframes } from 'styled-components';
+import Image from "next/image";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
-const ContainerComponent3 = ({ cards3Ref,
-    cards3InView }) => {
-      
+const ContainerComponent3 = ({ cards3Ref, cards3InView }) => {
   return (
     <ContainerComponents3 image={`${"/images/wallpaper2.jpg"}`}>
       <div className="container-component-3" ref={cards3Ref}>
@@ -77,7 +75,7 @@ const ContainerComponent3 = ({ cards3Ref,
   );
 };
 
-export default ContainerComponent3
+export default ContainerComponent3;
 
 const heroAnimation = keyframes`
 0%{
@@ -281,8 +279,6 @@ const ContainerComponents3 = styled.section`
     }
   }
 `;
-
-
 
 const ButtonHero = styled.button`
   cursor: pointer;

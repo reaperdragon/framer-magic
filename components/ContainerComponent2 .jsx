@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import React from 'react'
-import styled, { keyframes } from 'styled-components';
+import Image from "next/image";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const ContainerComponent2 = ({ cards2Ref, cards2InView }) => {
   return (
@@ -69,7 +69,7 @@ const ContainerComponent2 = ({ cards2Ref, cards2InView }) => {
   );
 };
 
-export default ContainerComponent2 
+export default ContainerComponent2;
 
 const heroAnimation = keyframes`
 0%{
@@ -82,7 +82,6 @@ const heroAnimation = keyframes`
   opacity:1; transform: translateY(0px);
    }
 `;
-
 
 const ContainerComponents2 = styled.section`
   background: rgb(7, 8, 24);
@@ -403,7 +402,6 @@ const ContainerComponents2 = styled.section`
     justify-content: center;
   }
 `;
-
 
 const ButtonHero = styled.button`
   cursor: pointer;

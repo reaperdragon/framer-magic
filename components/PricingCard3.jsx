@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import React from 'react'
-import styled, { keyframes } from 'styled-components';
+import Image from "next/image";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const PricingCard3 = () => {
   return (
@@ -104,9 +104,9 @@ const PricingCard3 = () => {
       </div>
     </Container>
   );
-}
+};
 
-export default PricingCard3
+export default PricingCard3;
 
 const heroAnimation = keyframes`
 0%{

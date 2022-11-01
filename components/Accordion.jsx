@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Accordion = ({ title, content, faqRef }) => {
   const [isActive, setIsActive] = useState(false);
@@ -88,14 +88,12 @@ const Container = styled.div`
 
     @media (max-width: 809px) {
       font-size: 20px;
-      
     }
 
     @media (max-width: 540px) {
       font-size: 16px;
-      font-weight:normal ;
+      font-weight: normal;
     }
-
   }
 
   .accordion-icon-rotate {

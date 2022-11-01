@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import React from 'react'
-import styled from 'styled-components';
-import { data1 } from '../constants/data1';
+import Image from "next/image";
+import React from "react";
+import styled from "styled-components";
+import { data1 } from "../constants/data1";
 
 const Container1 = () => {
   return (
@@ -41,10 +41,9 @@ const Container1 = () => {
       </div>
     </Container>
   );
-}
+};
 
-export default Container1
-
+export default Container1;
 
 const Container = styled.div`
   padding: 100px 30px;

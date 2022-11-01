@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import React from 'react'
-import { motion } from 'framer-motion';
-import styled, { keyframes } from 'styled-components';
+import Image from "next/image";
+import React from "react";
+import { motion } from "framer-motion";
+import styled, { keyframes } from "styled-components";
 
 const main = {
   initial: {
@@ -81,9 +81,9 @@ const HeroSection = () => {
       </BgContainer>
     </Wrapper>
   );
-}
+};
 
-export default HeroSection
+export default HeroSection;
 
 const heroAnimation = keyframes`
 0%{

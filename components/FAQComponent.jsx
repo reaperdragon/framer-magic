@@ -1,9 +1,9 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components';
-import { accordian } from '../constants/accordian';
-import Accordion from './Accordion';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import { accordian } from "../constants/accordian";
+import Accordion from "./Accordion";
 
-const FAQComponent = ({faqRef}) => {
+const FAQComponent = ({ faqRef }) => {
   return (
     <FAQContainer>
       <h1 className="title">FAQ</h1>
@@ -15,12 +15,9 @@ const FAQComponent = ({faqRef}) => {
       </div>
     </FAQContainer>
   );
-}
+};
 
 export default FAQComponent;
-
-
-
 
 const heroAnimation = keyframes`
 0%{

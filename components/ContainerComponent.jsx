@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import React from 'react'
-import styled, { keyframes } from 'styled-components';
+import Image from "next/image";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const ContainerComponent = ({ cardsRef, cardsInView }) => {
-    return (
+  return (
     <ContainerComponents image={`${"/images/wallpaper1.jpg"}`} ref={cardsRef}>
       {cardsInView && (
         <>
@@ -151,7 +151,7 @@ const ContainerComponent = ({ cardsRef, cardsInView }) => {
   );
 };
 
-export default ContainerComponent
+export default ContainerComponent;
 
 const heroAnimation = keyframes`
 0%{
