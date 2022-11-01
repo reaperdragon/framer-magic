@@ -16,6 +16,7 @@ const Header = ({ isOpen, toggle }) => {
                 layout="intrinsic"
                 width="24"
                 height="24"
+                alt="Logo"
               />
             </a>
           </Link>
@@ -101,7 +102,6 @@ const Header = ({ isOpen, toggle }) => {
 };
 
 export default Header;
-
 
 const heroAnimation = keyframes`
 0%{
