@@ -15,25 +15,34 @@ function MyApp({ Component, pageProps }) {
         <title>Framer Magic</title>
         <link rel="icon" href="/svgs/framer-logo-duotone.svg" />
 
-
-        <meta name="description" content="" />
+        <meta
+          name="description"
+          content="Next Js App Built with Framer Motion"
+        />
 
         <meta itemprop="name" content="Framer Magic" />
-        <meta itemprop="description" content="" />
-        <meta itemprop="image" content="" />
-
+        <meta
+          itemprop="description"
+          content="Next Js App Built with Framer Motion"
+        />
+        <meta itemprop="image" content="Next Js App Built with Framer Motion" />
 
         <meta property="og:url" content="https://framer-magic.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Framer Magic" />
         <meta property="og:description" content="" />
-        <meta property="og:image" content="" />
+        <meta
+          property="og:image"
+          content="Next Js App Built with Framer Motion"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Framer Magic" />
         <meta name="twitter:description" content="" />
-        <meta name="twitter:image" content=""></meta>
-        
+        <meta
+          name="twitter:image"
+          content="Next Js App Built with Framer Motion"
+        ></meta>
       </Head>
       <AnimatePresence>
         {" "}
