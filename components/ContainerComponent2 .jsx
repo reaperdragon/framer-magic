@@ -453,24 +453,3 @@ const ButtonHero = styled.button`
     }
   }
 `;
-
-const ButtonIOS = styled.button`
-  width: fit-content;
-  font-family: "Manrope", sans-serif;
-  background: rgba(255, 255, 255, 0.1);
-  outline: none;
-  border: none;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  padding: 4px 16px;
-  gap: 10px;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 810px) {
-    font-size: 12px;
-  }
-`;

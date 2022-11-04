@@ -59,31 +59,3 @@ export default function Home() {
     </>
   );
 }
-
-const Button = styled.button`
-  cursor: pointer;
-  background: ${(props) =>
-    props.primary ? "rgb(0,0,0)" : "rgb(255, 255, 255)"};
-  padding: 10px;
-  color: ${(props) => (props.primary ? "white" : "black")};
-  border-radius: 24px 24px 0;
-  font-family: "Manrope", sans-serif;
-  font-weight: semibold;
-  font-size: 14px;
-  font-weight: bold;
-  backdrop-filter: blur(30px);
-  border: none;
-  outline: none;
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  width: 220px;
-  transition: all 0.3s ease-in-out;
-
-  border-style: ${(props) => (props.primary ? null : "solid")};
-  border-width: ${(props) => (props.primary ? null : `1px`)};
-  border-color: ${(props) =>
-    props.primary ? null : "rgba(255, 255, 255, 0.2)"};
-`;
