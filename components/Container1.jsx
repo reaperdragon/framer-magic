@@ -13,11 +13,15 @@ const Container1 = () => {
       </h5>
 
       <div className="container-comp">
-        <img src="/svgs/company-amazon.svg" alt="svg" />
-        <img src="/svgs/company-apple.svg" alt="svg" />
-        <img src="/svgs/company-facebook.svg" alt="svg" />
-        <img src="/svgs/company-airbnb.svg" alt="svg" />
-        <img src="/svgs/company-google.svg" alt="svg" />
+        <img src="/svgs/company-amazon.svg" alt="svg" className="image-comp" />
+        <img src="/svgs/company-apple.svg" alt="svg" className="image-comp" />
+        <img
+          src="/svgs/company-facebook.svg"
+          alt="svg"
+          className="image-comp"
+        />
+        <img src="/svgs/company-airbnb.svg" alt="svg" className="image-comp" />
+        <img src="/svgs/company-google.svg" alt="svg" className="image-comp" />
       </div>
 
       <div className="container-sep"></div>
@@ -84,6 +88,11 @@ const Container = styled.div`
       img {
         margin: 10px 0;
       }
+    }
+
+    .image-comp {
+      width: fit-content;
+      height: fit-content;
     }
   }
 
