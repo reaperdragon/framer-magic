@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import {Footer} from '../components'
 
 const ErrorPage = () => {
     return (
@@ -21,6 +22,8 @@ const ErrorPage = () => {
             Site.
           </p>
         </BgContainer>
+
+        <Footer />
       </>
     );
 };
