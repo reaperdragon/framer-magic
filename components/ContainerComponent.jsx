@@ -549,7 +549,7 @@ const ContainerComponents = styled.section`
   }
 
   .mockup-1-image-1 {
-    background: url("https://images.unsplash.com/photo-1637416067365-2b5e7e8fe8fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
+    background: url("https://images.unsplash.com/photo-1634553569595-6cbd93eaa276?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
