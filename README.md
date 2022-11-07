@@ -11,7 +11,8 @@
 - Frontend : [Next Js](https://nextjs.org/)
 - Style : [Styled-Components](https://styled-components.com/)
 - Motion : [Framer Motion](https://www.framer.com/motion/)
-- Fonts : [Phosphor](https://phosphoricons.com/)
+- Fonts : [Google Fonts](https://fonts.google.com/)
+- Icons : [Phosphor](https://phosphoricons.com/)
 
 
 ### Installation
@@ -47,3 +48,7 @@ npm run dev
 --or--
 yarn dev
 ```
+
+### Screenshots
+
+![Framer-Magic](https://user-images.githubusercontent.com/67114280/200320037-af2cfb95-3c02-4986-8c23-a9a52491337b.png)
