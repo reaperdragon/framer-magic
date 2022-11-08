@@ -13,6 +13,7 @@
 - Motion : [Framer Motion](https://www.framer.com/motion/)
 - Fonts : [Google Fonts](https://fonts.google.com/)
 - Icons : [Phosphor](https://phosphoricons.com/)
+- Images : [Unsplash](https://unsplash.com/)
 
 
 ### Installation
