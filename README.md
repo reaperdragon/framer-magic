@@ -53,3 +53,5 @@ yarn dev
 ### Screenshots
 
 ![Framer-Magic](https://user-images.githubusercontent.com/67114280/200320037-af2cfb95-3c02-4986-8c23-a9a52491337b.png)
+
+![Sign-Up-Framer-Magic](https://user-images.githubusercontent.com/67114280/200829252-9b1b874d-775d-4a54-9887-d10d3ea46b1d.png)
