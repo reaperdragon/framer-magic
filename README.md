@@ -4,7 +4,7 @@
 
 #### This Site is Originally built with only Framer - <a href="https://www.youtube.com/watch?v=0korQqBgJ_o" rel="noreferrer" target="_blank">Link</a>
 
-# I Will Keep Adding New Animations and Framer motion features to this Project.
+#### I Will Keep Adding New Animations and Framer motion features to this Project.
 
 ### Stack
 
