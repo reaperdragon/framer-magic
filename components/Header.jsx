@@ -58,6 +58,11 @@ const Header = ({ isOpen, toggle }) => {
           <div className="open">
             <ul className="open-menu">
               <li className="open-link" onClick={toggle}>
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li className="open-link" onClick={toggle}>
                 <Link href="/components">
                   <a>Components</a>
                 </Link>
@@ -336,6 +341,9 @@ const Container = styled.nav`
       }
       :nth-child(6) {
         animation-delay: 1.7s;
+      }
+      :nth-child(7) {
+        animation-delay: 2s;
       }
     }
 
