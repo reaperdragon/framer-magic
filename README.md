@@ -51,3 +51,7 @@ npm run dev
 --or--
 yarn dev
 ```
+
+## Screenshot
+
+![Framer Magic](https://user-images.githubusercontent.com/67114280/204507628-6daa4102-c934-420b-b523-032e0712f461.png)
