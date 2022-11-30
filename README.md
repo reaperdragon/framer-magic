@@ -10,6 +10,7 @@
 
 ### Stack
 
+- Language: [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - Frontend : [Next Js](https://nextjs.org/)
 - Style : [Styled-Components](https://styled-components.com/)
 - Motion : [Framer Motion](https://www.framer.com/motion/)
